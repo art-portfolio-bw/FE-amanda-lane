@@ -46,6 +46,10 @@
         font-size: .8rem;
     }
 
+    .nav-links.active {
+        font-weight: bold;
+    }
+
     .log-link-container {
         width: 100px;
         display: flex;
