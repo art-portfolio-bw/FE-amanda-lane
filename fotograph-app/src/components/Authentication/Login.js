@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './SignUp.scss';
 import loginHero from '../../styles/login-hero.jpg'
@@ -20,7 +21,7 @@ function Login(){
                     placeholder="Password"
                     />
                     <button className="signup-btn">Log In</button>
-                    <p className="form-footer">Not registered? Create an Account.</p>
+                    <p className="form-footer">Not registered? <Link className='form-links' to='/sign-up'>Create an Account.</Link></p>
                     </div>
             </form>
             <img src={loginHero} className="login-hero" />
