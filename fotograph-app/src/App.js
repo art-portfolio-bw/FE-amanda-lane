@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import NavBar from './components/Navigation/NavBar';
 import SignUp from './components/Authentication/SignUp';
+import Login from './components/Authentication/Login';
 
 import './styles/App.scss';
 
@@ -13,6 +14,7 @@ function App() {
 
 
       <Route path='/sign-up' component={SignUp} />
+      <Route path='/login' component={Login} />
     </div>
   );
 }

@@ -26,22 +26,30 @@
         padding: 15px;
     }
 
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .name-inputs {
         display: flex;
-        justify-content: space-between;
         max-width: 300px;
+        width: 290px;
+        justify-content: space-between;
+
 
         input {
-            width: 110px;
+            width: 115px;
         }
     }
 
     input {
         padding: 8px;
-        margin: 15px;
         border-radius: 3px;
         border: 1px solid silver;
         width: 270px;
+        margin: 15px 0;
     }
 
     input::placeholder {
@@ -53,11 +61,16 @@
         background: #3060B6;
         border: none;
         width: 270px;
+        margin-top: 20px;
         padding: 10px;
         color: white;
         border-radius: 3px;
         font-family: 'Kodchasan', sans-serif;
         font-size: .6rem;
+    }
+
+    .form-footer {
+        margin: 25px;
     }
 
     .login-hero {

@@ -19,7 +19,7 @@ function NavBar(){
             <Link className="nav-links" to="/">Artists</Link>{' '}
             <Link className="nav-links" to="/">About</Link>{' '}
             <div className="log-link-container">
-            <Link className="log-links" to="/">Log In</Link>{' '}
+            <Link className="log-links" to="/login">Log In</Link>{' '}
             <Link className="log-links" to="/">Log Out</Link>{' '}
             </div>
         </nav>

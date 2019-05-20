@@ -3,35 +3,24 @@ import React from 'react';
 import './SignUp.scss';
 import loginHero from '../../styles/login-hero.jpg'
 
-function SignUp(){
+function Login(){
     return (
         <div className="signup-page">
         <div className="signup-page-container">
             <form className="signup-form">
                 <header className="header">
-                    <h3>Create Your own photo experience</h3>
+                    <h3>Welcome Back!</h3>
                     <h2>Create an Account</h2>
                 </header>
                     <div className="input-container">
-                    <div className="name-inputs">
-                        <input
-                        placeholder="First Name"
-                        />
-                        <input 
-                        placeholder="Last Name"
-                        />
-                    </div>
                     <input 
-                    placeholder="Email"
+                    placeholder="Username"
                     />
                     <input 
                     placeholder="Password"
                     />
-                    <input 
-                    placeholder="Confirm Password"
-                    />
-                    <button className="signup-btn">Sign Up</button>
-                    <p className="form-footer">Already a member? Log in.</p>
+                    <button className="signup-btn">Log In</button>
+                    <p className="form-footer">Not registered? Create an Account.</p>
                     </div>
             </form>
             <img src={loginHero} className="login-hero" />
@@ -40,4 +29,4 @@ function SignUp(){
     )
 }
 
-export default SignUp;
+export default Login;
