@@ -1,6 +1,9 @@
 //import actions
-
-
+import {
+    LOGIN_START,
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE
+  } from "../actions";
 
 //set initial State
 
@@ -17,14 +20,21 @@ const reducer = ( state = initialState, action ) => {
         case LOGIN_START:
             return {
               ...state,
-              isLoggingIn: true,
+              loggingIn: true,
               error: ""
             };
           case LOGIN_SUCCESS:
             return {
               ...state,
-              isLoggingIn: false
+              loggingIn: false,
+              loggedIn: true,
+              error: ""
             };
+           case LOGIN_FAILURE:
+               return {
+                   ...state,
+                   error: "Invalid Username/Password"
+               }
             default:
                 return state;
     }

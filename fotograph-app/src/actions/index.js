@@ -15,5 +15,8 @@ export const login = creds => dispatch => {
           dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload })
         );
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+        dispatch({ type: LOGIN_FAILURE })
+      });
   };

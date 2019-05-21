@@ -1,14 +1,41 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import { login } from '../../actions';
 
 import './SignUp.scss';
 import loginHero from '../../styles/login-hero.jpg'
 
-function Login(){
+class Login extends React.Component{
+    state = {
+        credentials: {
+            username: "",
+            password: ""
+        }
+    }
+
+    handleChange = e => {
+        this.setState({
+          credentials: {
+            ...this.state.credentials,
+            [e.target.name]: e.target.value
+          }
+        });
+      };
+    
+      login = e => {
+        e.preventDefault();
+        this.props.login(this.state.credentials).then(() => {
+          this.props.history.push("/user");
+        });
+      };
+
+    render(){
     return (
         <div className="signup-page">
         <div className="signup-page-container">
-            <form className="signup-form">
+            <form className="signup-form" on Submit={this.login}>
                 <header className="header">
                     <h3>Welcome Back!</h3>
                     <h2>Login</h2>
@@ -16,11 +43,19 @@ function Login(){
                     <div className="input-container">
                     <input 
                     placeholder="Username"
+                    onChange={this.handleChange}
+                    value={this.state.credentials.username}
+                    name="username"
                     />
                     <input 
                     placeholder="Password"
+                    onChange={this.handleChange}
+                    value={this.state.credentials.password}
+                    name="password"
+                    type="password"
                     />
-                    <Link to='/user'><button className="signup-btn">Log In</button></Link>
+                    {this.props.error && <p className="error-message">{this.props.error}</p>}
+                    <button onClick={this.login} className="signup-btn">Log In</button>
                     <p className="form-footer">Not registered? <Link className='form-links' to='/sign-up'>Create an Account.</Link></p>
                     </div>
             </form>
@@ -28,6 +63,12 @@ function Login(){
         </div>
         </div>
     )
+    }
 }
 
-export default Login;
+const mapStateToProps = state => ({  
+    loggingIn: state.LoggingIn,
+    error: state.error
+})
+
+export default connect(mapStateToProps, { login } )(Login);
