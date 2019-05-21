@@ -10,7 +10,7 @@ import loginHero from '../../styles/login-hero.jpg'
 class Login extends React.Component{
     state = {
         credentials: {
-            username: "",
+            email: "",
             password: ""
         }
     }
@@ -42,10 +42,10 @@ class Login extends React.Component{
                 </header>
                     <div className="input-container">
                     <input 
-                    placeholder="Username"
+                    placeholder="Username/Email"
                     onChange={this.handleChange}
-                    value={this.state.credentials.username}
-                    name="username"
+                    value={this.state.credentials.email}
+                    name="email"
                     />
                     <input 
                     placeholder="Password"
@@ -56,7 +56,8 @@ class Login extends React.Component{
                     />
                     {this.props.error && <p className="error-message">{this.props.error}</p>}
                     <button onClick={this.login} className="signup-btn">Log In</button>
-                    <p className="form-footer">Not registered? <Link className='form-links' to='/sign-up'>Create an Account.</Link></p>
+                    <p className="form-footer">Not registered? 
+                    <Link className='form-links' to='/sign-up'> Create an Account.</Link></p>
                     </div>
             </form>
             <img src={loginHero} className="login-hero" alt="girl with camera" />
@@ -68,7 +69,7 @@ class Login extends React.Component{
 
 const mapStateToProps = state => ({  
     loggingIn: state.LoggingIn,
-    error: state.error
+    error: state.loginError
 })
 
 export default connect(mapStateToProps, { login } )(Login);

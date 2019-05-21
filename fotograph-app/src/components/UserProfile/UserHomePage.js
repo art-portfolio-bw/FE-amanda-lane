@@ -35,7 +35,7 @@ class UserHomePage extends React.Component{
             </nav>
               <h1 className='section-header'>My Posts</h1>
                 <div className='recents-container'>
-                    {this.state.myRecentPosts.slice(0, 6).map((recent, index) => (
+                    {this.state.myRecentPosts.slice(23, 29).map((recent, index) => (
                     <div className="post-container">
                     <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
                     </div>
