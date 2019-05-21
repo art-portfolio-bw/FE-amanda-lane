@@ -6,14 +6,15 @@
 
     .signup-page-container {
         background: white;
-        height: 70vh;
+        height: 470px;
         display: flex;
         border-radius: 3px;
     }
 
     .signup-form {
-        max-width: 320px;
-        width: 320px;
+        max-width: 300px;
+        width: 300px;
+        height: auto;
     }
 
     h3 {
@@ -34,8 +35,8 @@
 
     .name-inputs {
         display: flex;
-        max-width: 300px;
-        width: 290px;
+        max-width: 280px;
+        width: 280px;
         justify-content: space-between;
 
 
@@ -48,7 +49,7 @@
         padding: 8px;
         border-radius: 3px;
         border: 1px solid silver;
-        width: 270px;
+        width: 260px;
         margin: 15px 0;
     }
 
@@ -80,7 +81,7 @@
     }
 
     .login-hero {
-        height: 70vh;
+        height: 470px;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
     }

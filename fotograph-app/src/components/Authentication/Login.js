@@ -11,7 +11,7 @@ function Login(){
             <form className="signup-form">
                 <header className="header">
                     <h3>Welcome Back!</h3>
-                    <h2>Create an Account</h2>
+                    <h2>Login</h2>
                 </header>
                     <div className="input-container">
                     <input 

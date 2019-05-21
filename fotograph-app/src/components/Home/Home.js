@@ -15,11 +15,15 @@ class Home extends Component {
  componentDidMount() {
    axios
      .get('https://artportfoliobw.herokuapp.com/')
-     .then(res => this.setState({ recentPosts: res.data }))
+     .then(res => {
+       this.setState({ recentPosts: res.data })
+      })
      .catch(err => console.log(err));
  }
 
  // -----------------------------RENDER FUNCTION---------------------------------- //
+
+
  render() {
    const recentPosts = this.state.recentPosts;
    return (
@@ -27,8 +31,8 @@ class Home extends Component {
        <h1 className='section-header'>Recent Photography Posts</h1>
        <div className='recents-container'>
          {' '}
-         {recentPosts.map((recent, index) => (
-           <img src={recent.src} alt={recent.fname} className='recent-posts' />
+         {recentPosts.slice(0, 12).map((recent, index) => (
+           <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
          ))}
        </div>
      </div>
