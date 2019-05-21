@@ -15,7 +15,7 @@
     .search-bar {
         border: 1px solid silver;
         width: 27%;
-        padding: 2px;
+        padding: 1px;
         border-radius: 3px;
     }
 
@@ -27,6 +27,7 @@
 
     .search-input {
         font-family: 'Kodchasan', sans-serif;
+        font-size: .7rem;
         border: none;
         padding: 1%;
         text-transform: uppercase;
