@@ -1,10 +1,31 @@
 .user-home-page {
     margin-top: 10%;
     width: 98%;
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 8%;
+        
+        a {
+            font-family: 'Kodchasan', sans-serif;
+            text-decoration: none;
+            color: #00CEE6;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            width: 200px;
+        }
+
+        .create-post-btn {
+            padding-left: 2%;
+        }
+    }
   
     .section-header {
       margin-left: 10%;
-      margin-top: 4%;
+      margin-top: 1%;
       font-size: 1.6rem;
       font-family: 'Kodchasan', sans-serif;
       color: #484a51;

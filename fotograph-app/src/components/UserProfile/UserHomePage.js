@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import addbtn from '../../styles/addbtn.svg';
+
 import axios from 'axios';
 
 import "./UserHomePage.scss";
@@ -25,27 +28,16 @@ class UserHomePage extends React.Component{
     render(){
         return (
             <div className="user-home-page">
-              <h1 className='section-header'>Recent Photography Posts</h1>
+            <nav>
+                <Link to="/">Create new post 
+                    <img className="create-post-btn" src={addbtn} alt="add new post" />
+                </Link>
+            </nav>
+              <h1 className='section-header'>My Posts</h1>
                 <div className='recents-container'>
                     {this.state.myRecentPosts.slice(0, 6).map((recent, index) => (
                     <div className="post-container">
-                        <div className="post-header">
-                        <img src={recent.avatar} key={recent.fname} alt ={recent.fname} className='user-avatar' />
-                        <header>{recent.fname} {recent.lname}</header>
-                        </div>
                     <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
-                    </div>
-                    ))}
-                </div>
-                <h1 className='section-header'>Popular Photography Posts</h1>
-                <div className='recents-container'>
-                    {this.state.myRecentPosts.slice(13, 19).map((recent, index) => (
-                    <div className="post-container">
-                        <div className="post-header">
-                        <img src={recent.avatar} key={recent.lname} alt ={recent.fname} className='user-avatar' />
-                        <header>{recent.fname} {recent.lname}</header>
-                        </div>
-                        <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
                     </div>
                     ))}
                 </div>
