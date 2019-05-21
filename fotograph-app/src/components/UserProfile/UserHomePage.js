@@ -15,12 +15,15 @@ class UserHomePage extends React.Component{
     }
 
     render(){
-        console.log("Users: ", this.props.user.photos)
+        console.log("Users: ", this.props.user)
         return (
             <div className="user-home-page">
 
             <nav>
-                <h2>{this.props.user.msg}</h2>
+                <div className="user-welcome-container">
+                    <img src={this.props.user.avatar} className="avatar-img" />
+                    <h2>{this.props.user.msg}</h2>
+                </div>
                 <Link to="/create-post">Create new post 
                     <img className="create-post-btn" src={addbtn} alt="add new post" />
                 </Link>

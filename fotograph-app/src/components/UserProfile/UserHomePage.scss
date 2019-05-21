@@ -2,6 +2,18 @@
     margin-top: 10%;
     width: 98%;
 
+    .user-welcome-container {
+      width: 450px;
+      border: 1px solid;
+      display: flex;
+    }
+
+    .avatar-img {
+      height: 50px;
+      border-radius: 50%;
+      margin: 2% 5%;
+    }
+
     h2 {
       font-size: 1.2rem;
       margin: 5%;
