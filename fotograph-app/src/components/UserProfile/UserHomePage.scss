@@ -4,19 +4,20 @@
 
     .user-welcome-container {
       width: 450px;
-      border: 1px solid;
       display: flex;
     }
 
     .avatar-img {
-      height: 50px;
+      height: 35px;
       border-radius: 50%;
-      margin: 2% 5%;
+      margin: 0 0 2% 12%;
+      align-self: center;
     }
 
     h2 {
       font-size: 1.2rem;
-      margin: 5%;
+      align-self: center;
+      margin-left: 2%;
   }
 
     nav {
@@ -42,7 +43,7 @@
   
     .section-header {
       margin-left: 10%;
-      margin-top: 1%;
+      margin-top: 5%;
       font-size: 1.6rem;
       font-family: 'Kodchasan', sans-serif;
       color: #484a51;
@@ -79,12 +80,36 @@
         margin-left: 7%;
       }
 
+      .likes {
+        width: auto;
+        align-self: flex-end;
+        background: lightgray;
+        padding: 2%;
+        margin-right: 10%;
+        border-radius: 3px;
+        position: relative;
+        top: 35px;
+        opacity: 0.8;
+        z-index: 1;
+        text-align: center;
+
+        .fa-heart {
+          padding-right: 2%;
+        }
+      }
+
       .recent-posts {
         width: 90%;
         height: 175px;
         object-fit: cover;
         border-radius: 8px;
         padding: 6px 6px;
+      }
+
+      .photo-description {
+        font-size: .8rem;
+        margin-left: 5%;
+        width: 100%;
       }
     }
   }

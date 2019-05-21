@@ -41,12 +41,35 @@
         margin-left: 7%;
       }
 
+      .likes {
+        width: auto;
+        align-self: flex-end;
+        background: lightgray;
+        padding: 2%;
+        margin-right: 10%;
+        border-radius: 3px;
+        position: relative;
+        top: 35px;
+        opacity: 0.8;
+        z-index: 1;
+        text-align: center;
+
+        .fa-heart {
+          padding-right: 2%;
+        }
+      }
+
       .recent-posts {
         width: 90%;
         height: 175px;
         object-fit: cover;
         border-radius: 8px;
         padding: 6px 6px;
+      }
+
+      .photo-description {
+        font-size: .8rem;
+        margin-left: 2%;
       }
     }
   }
