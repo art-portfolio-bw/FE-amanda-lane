@@ -4,11 +4,11 @@ import axios from 'axios';
 
 import './Home.scss';
 
-class Home extends Component {
+class ArtistsPage extends Component {
  constructor(props) {
    super(props);
    this.state = {
-     recentPosts: []
+     artists: []
    };
  }
 
@@ -16,7 +16,7 @@ class Home extends Component {
    axios
      .get('https://artportfoliobw.herokuapp.com/')
      .then(res => {
-       this.setState({ recentPosts: res.data })
+       this.setState({ artists: res.data })
       })
      .catch(err => console.log(err));
  }
@@ -30,7 +30,7 @@ class Home extends Component {
    return (
      <div className='home-container'>
 
-      <h1 className='section-header'>Popular Photography Posts</h1>
+      <h1 className='section-header'>Popular Artists</h1>
        <div className='recents-container'>
          {recentPosts.slice(13, 19).map( recent => (
            <div className="post-container">
@@ -45,7 +45,7 @@ class Home extends Component {
          ))}
        </div>
 
-       <h1 className='section-header'>Recent Photography Posts</h1>
+       <h1 className='section-header'>Recent Activity</h1>
        <div className='recents-container'>
          {recentPosts.map((recent, index) => (
            <div className="post-container">
@@ -64,4 +64,4 @@ class Home extends Component {
  }
 }
 
-export default Home;
+export default ArtistsPage;

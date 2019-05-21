@@ -1,10 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import { Link, NavLink } from "react-router-dom";
 
 import './NavBar.scss';
 import logo from '../../styles/LOGO.png';
 
-function NavBar(){
+function NavBar(props){
+    console.log(props)
+
     return (
         <nav className="navigation-bar">
             <Link className="logo" to="/"><img src={logo} alt="fotograph logo" /></Link>
@@ -15,15 +20,27 @@ function NavBar(){
             className="search-input"
             />
             </form>
-            <NavLink className="nav-links" to="/user"> My Photo Collection</NavLink>{' '}
+            {props.loggedIn && <NavLink className="nav-links" to="/user"> My Photo Collection</NavLink>}
             <NavLink className="nav-links" to="/artists">Artists</NavLink>{' '}
             <NavLink className="nav-links" to="/about">About</NavLink>{' '}
             <div className="log-link-container">
-            <Link className="log-links" to="/login">Log In</Link>{' '}
-            <Link className="log-links" to="/">Log Out</Link>{' '}
+            {props.loggedIn ? (
+                <Link className="log-links" to="/">Log Out</Link>
+            ) : 
+             (
+                <Link className="log-links" to="/login" onClick={logout}>Log In/Sign Up</Link>
+            )}
             </div>
         </nav>
     )
 }
 
-export default NavBar;
+function logout(){
+    return localStorage.clear();
+}
+
+const mapStateToProps = state => ({
+    loggedIn: state.loggedIn
+})
+
+export default withRouter(connect(mapStateToProps, {} )(NavBar));

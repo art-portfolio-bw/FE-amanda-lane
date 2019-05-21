@@ -72,7 +72,8 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 fetchingMyPosts: true,
                 error: '',
-                user: state.user
+                user: state.user, 
+                loggedIn: true,
               }
             case FETCH_USER_POSTS_SUCCESS:
               return {
@@ -80,7 +81,8 @@ const reducer = ( state = initialState, action ) => {
                 fetchingMyPosts: false,
                 error: '',
                 myPosts: action.payload,
-                user: state.user
+                user: state.user,
+                loggedIn: true
               }
             default:
                 return state;
