@@ -52,9 +52,10 @@ export const login = creds => dispatch => {
   export const fetchMyPosts = () => dispatch => {
     dispatch({ type: FETCH_USER_POSTS_START });
     axiosWithAuth()
-    .get('https://artportfoliobw.herokuapp.com/')
+    .get(`https://artportfoliobw.herokuapp.com/`)
     .then( res => {
-      console.log(res)
+      console.log("fetch", res)
+      dispatch({ type: FETCH_USER_POSTS_SUCCESS})
     })
     .catch( err => {
       console.log(err)

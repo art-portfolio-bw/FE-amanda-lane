@@ -2,9 +2,14 @@
     margin-top: 10%;
     width: 98%;
 
+    h2 {
+      font-size: 1.2rem;
+      margin: 5%;
+  }
+
     nav {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         margin-right: 8%;
         
         a {

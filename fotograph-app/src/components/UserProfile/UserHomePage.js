@@ -6,8 +6,6 @@ import { withRouter } from 'react-router-dom';
 
 import addbtn from '../../styles/addbtn.svg';
 
-import axios from 'axios';
-
 import "./UserHomePage.scss";
 
 class UserHomePage extends React.Component{
@@ -17,28 +15,31 @@ class UserHomePage extends React.Component{
     }
 
     render(){
+        console.log("Users: ", this.props.user)
         return (
             <div className="user-home-page">
+
             <nav>
-                <Link to="/">Create new post 
+                <h2>{this.props.user.msg}</h2>
+                <Link to="/create-post">Create new post 
                     <img className="create-post-btn" src={addbtn} alt="add new post" />
                 </Link>
             </nav>
               <h1 className='section-header'>My Posts</h1>
-                <div className='recents-container'>
+                {/* <div className='recents-container'>
                     {this.props.myPosts.map( recent => (
                     <div className="post-container">
                     <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
                     </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({ 
-    myPosts: state.myPosts
+    user: state.user
 })
 
 export default withRouter(connect(mapStateToProps, { fetchMyPosts } )(UserHomePage));

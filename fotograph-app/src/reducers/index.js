@@ -21,7 +21,7 @@ const initialState = {
     loginWelcome: "",
     loginError: '',
     fetchingMyPosts: false,
-    myPosts: []
+    user: {}
 }
 
 //reducer
@@ -40,7 +40,8 @@ const reducer = ( state = initialState, action ) => {
             ...state,
             isRegistering: false,
             isRegistered: true,
-            registationError: ""
+            registationError: "",
+            user: action.payload
           } 
         case REGISTER_FAILURE: 
           return {
@@ -58,7 +59,8 @@ const reducer = ( state = initialState, action ) => {
               ...state,
               loggingIn: false,
               loggedIn: true,
-              loginError: ""
+              loginError: "",
+              user: action.payload
             };
            case LOGIN_FAILURE:
                return {
@@ -69,14 +71,16 @@ const reducer = ( state = initialState, action ) => {
               return {
                 ...state,
                 fetchingMyPosts: true,
-                error: ''
+                error: '',
+                user: state.user
               }
             case FETCH_USER_POSTS_SUCCESS:
               return {
                 ...state,
                 fetchingMyPosts: false,
                 error: '',
-                myPosts: action.payload
+                myPosts: action.payload,
+                user: state.user
               }
             default:
                 return state;
