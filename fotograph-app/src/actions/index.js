@@ -9,7 +9,6 @@ export const register = creds => dispatch => {
   return axios
     .post("https://artportfoliobw.herokuapp.com/signup", creds)
     .then(res => {
-      console.log(res)
       localStorage.setItem(
         "token",
         res.data.token
@@ -44,3 +43,9 @@ export const login = creds => dispatch => {
         dispatch({ type: LOGIN_FAILURE })
       });
   };
+
+  export const FETCH_USER_POSTS_START = "FETCH_USER_POSTS_START";
+  export const FETCH_USER_POSTS_SUCCESS = "FETCH_USER_POSTS_SUCCESS";
+  export const FETCH_USER_POSTS_FAILURE = "FETCH_USER_POSTS_FAILURE";
+
+  // export const fetchUserPosts = 

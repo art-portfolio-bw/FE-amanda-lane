@@ -35,7 +35,7 @@ class Login extends React.Component{
     return (
         <div className="signup-page">
         <div className="signup-page-container">
-            <form className="signup-form" on Submit={this.login}>
+            <form className="signup-form" onSubmit={this.login}>
                 <header className="header">
                     <h3>Welcome Back!</h3>
                     <h2>Login</h2>
@@ -46,6 +46,7 @@ class Login extends React.Component{
                     onChange={this.handleChange}
                     value={this.state.credentials.email}
                     name="email"
+                    required
                     />
                     <input 
                     placeholder="Password"
@@ -53,6 +54,7 @@ class Login extends React.Component{
                     value={this.state.credentials.password}
                     name="password"
                     type="password"
+                    required
                     />
                     {this.props.error && <p className="error-message">{this.props.error}</p>}
                     <button onClick={this.login} className="signup-btn">Log In</button>
