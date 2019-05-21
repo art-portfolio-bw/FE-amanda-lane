@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { axiosWithAuth } from '../components/Authentication/axiosWithAuth';
 
 export const REGISTER_START = "REGISTER_START";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -48,4 +49,14 @@ export const login = creds => dispatch => {
   export const FETCH_USER_POSTS_SUCCESS = "FETCH_USER_POSTS_SUCCESS";
   export const FETCH_USER_POSTS_FAILURE = "FETCH_USER_POSTS_FAILURE";
 
-  // export const fetchUserPosts = 
+  export const fetchMyPosts = () => dispatch => {
+    dispatch({ type: FETCH_USER_POSTS_START });
+    axiosWithAuth()
+    .get('https://artportfoliobw.herokuapp.com/')
+    .then( res => {
+      console.log(res)
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }

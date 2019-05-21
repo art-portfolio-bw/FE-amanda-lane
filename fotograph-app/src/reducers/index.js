@@ -5,7 +5,9 @@ import {
     LOGIN_FAILURE,
     REGISTER_START,
     REGISTER_SUCCESS,
-    REGISTER_FAILURE
+    REGISTER_FAILURE,
+    FETCH_USER_POSTS_START,
+    FETCH_USER_POSTS_SUCCESS
   } from "../actions";
 
 //set initial State
@@ -13,11 +15,13 @@ import {
 const initialState = {
     isRegistering: false,
     isRegistered: false,
+    registationError: '',
     loggingIn: false,
     loggedIn: false,
-    posts: [],
-    registationError: '',
-    loginError: ''
+    loginWelcome: "",
+    loginError: '',
+    fetchingMyPosts: false,
+    myPosts: []
 }
 
 //reducer
@@ -61,6 +65,19 @@ const reducer = ( state = initialState, action ) => {
                    ...state,
                    loginError: "Invalid Username/Password"
                }
+            case FETCH_USER_POSTS_START:
+              return {
+                ...state,
+                fetchingMyPosts: true,
+                error: ''
+              }
+            case FETCH_USER_POSTS_SUCCESS:
+              return {
+                ...state,
+                fetchingMyPosts: false,
+                error: '',
+                myPosts: action.payload
+              }
             default:
                 return state;
     }

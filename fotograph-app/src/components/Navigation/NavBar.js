@@ -15,7 +15,7 @@ function NavBar(){
             className="search-input"
             />
             </form>
-            <NavLink className="nav-links" to="/collections">Photo Collections</NavLink>{' '}
+            <NavLink className="nav-links" to="/user"> My Photo Collection</NavLink>{' '}
             <NavLink className="nav-links" to="/artists">Artists</NavLink>{' '}
             <NavLink className="nav-links" to="/about">About</NavLink>{' '}
             <div className="log-link-container">

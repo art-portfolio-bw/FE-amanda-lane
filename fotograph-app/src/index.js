@@ -5,12 +5,11 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
-import { setToken } from './components/Authentication/token';
 
 import './styles/index.scss';
 import App from './App';
 
-const store = createStore(reducer, applyMiddleware(thunk, setToken))
+const store = createStore(reducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
         <Provider store={store}>

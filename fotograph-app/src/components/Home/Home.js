@@ -34,22 +34,22 @@ class Home extends Component {
          {recentPosts.slice(0, 6).map((recent, index) => (
            <div className="post-container">
              <div className="post-header">
-               <img src={recent.avatar} key={recent.fname} alt ={recent.fname} className='user-avatar' />
+               <img src={recent.avatar} key={recent.email} alt ={recent.fname} className='user-avatar' />
                <header>{recent.fname} {recent.lname}</header>
             </div>
-           <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
+           <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
            </div>
          ))}
        </div>
        <h1 className='section-header'>Popular Photography Posts</h1>
        <div className='recents-container'>
-         {recentPosts.slice(13, 19).map((recent, index) => (
+         {recentPosts.slice(13, 19).map( recent => (
            <div className="post-container">
              <div className="post-header">
-               <img src={recent.avatar} key={recent.lname} alt ={recent.fname} className='user-avatar' />
+               <img src={recent.avatar} key={recent.email} alt ={recent.fname} className='user-avatar' />
                <header>{recent.fname} {recent.lname}</header>
             </div>
-            <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
+            <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
            </div>
          ))}
        </div>

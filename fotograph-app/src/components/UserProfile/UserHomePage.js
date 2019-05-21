@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchMyPosts } from '../../actions';
+import { withRouter } from 'react-router-dom';
+
 import addbtn from '../../styles/addbtn.svg';
 
 import axios from 'axios';
@@ -7,22 +11,9 @@ import axios from 'axios';
 import "./UserHomePage.scss";
 
 class UserHomePage extends React.Component{
-    constructor() {
-    super();
-    this.state = {
-        myRecentPosts: []
-     }
-    }
 
     componentDidMount() {
-        axios
-        .get('https://artportfoliobw.herokuapp.com/')
-        .then(res => {
-            this.setState({ 
-                myRecentPosts: res.data
-             })
-        })
-        .catch( err => console.log(err))
+        this.props.fetchMyPosts();
     }
 
     render(){
@@ -35,9 +26,9 @@ class UserHomePage extends React.Component{
             </nav>
               <h1 className='section-header'>My Posts</h1>
                 <div className='recents-container'>
-                    {this.state.myRecentPosts.slice(23, 29).map((recent, index) => (
+                    {this.props.myPosts.map( recent => (
                     <div className="post-container">
-                    <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
+                    <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
                     </div>
                     ))}
                 </div>
@@ -46,4 +37,8 @@ class UserHomePage extends React.Component{
     }
 }
 
-export default UserHomePage;
+const mapStateToProps = state => ({ 
+    myPosts: state.myPosts
+})
+
+export default withRouter(connect(mapStateToProps, { fetchMyPosts } )(UserHomePage));
