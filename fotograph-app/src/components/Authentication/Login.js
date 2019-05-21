@@ -24,7 +24,7 @@ function Login(){
                     <p className="form-footer">Not registered? <Link className='form-links' to='/sign-up'>Create an Account.</Link></p>
                     </div>
             </form>
-            <img src={loginHero} className="login-hero" alt="girl taking a photo" />
+            <img src={loginHero} className="login-hero" alt="girl with camera" />
         </div>
         </div>
     )
