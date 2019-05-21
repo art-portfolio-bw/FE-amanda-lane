@@ -34,6 +34,12 @@ class Home extends Component {
            <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
          ))}
        </div>
+       <h1 className='section-header'>Popular Photography Posts</h1>
+       <div className='recents-container'>
+         {recentPosts.slice(13, 25).map((recent, index) => (
+           <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
+         ))}
+       </div>
      </div>
    );
  }

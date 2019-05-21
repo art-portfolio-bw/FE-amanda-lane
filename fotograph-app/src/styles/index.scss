@@ -48,7 +48,7 @@ table {
 }
 
 body {
-    background: #007280;
+    background: white;
 	font-size: 62.5%;
 	font-family: 'Kodchasan', sans-serif;
 }
@@ -56,4 +56,8 @@ body {
 button:focus,
 input:focus {
 	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
 }
