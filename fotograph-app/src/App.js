@@ -12,15 +12,15 @@ import './styles/App.scss';
 function App() {
   return (
     <Router>
-    <div className="App">
-      <NavBar />
-      
-      <Route exact path='/' component={Home} />
-      <Route path='/sign-up' component={SignUp} />
-      <Route path='/login' component={Login} />
+      <div className="App">
+        <NavBar />
+        
+        <Route exact path='/' component={Home} />
+        <Route path='/sign-up' component={SignUp} />
+        <Route path='/login' component={Login} />
 
-      <Route path='/user' component={UserHomePage} />
-    </div>
+        <Route path='/user' component={UserHomePage} />
+      </div>
     </Router>
   );
 }
