@@ -48,7 +48,7 @@ class SignUp extends React.Component{
                         <p className="form-footer">Already a member? <Link className='form-links'  to='/login'>Log in.</Link></p>
                         </div>
                 </form>
-                <img src={loginHero} className="login-hero" />
+                <img src={loginHero} className="login-hero" alt="girl taking a photo" />
             </div>
             </div>
         )

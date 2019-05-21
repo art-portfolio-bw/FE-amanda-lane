@@ -46,8 +46,8 @@ class Home extends Component {
          {recentPosts.slice(13, 19).map((recent, index) => (
            <div className="post-container">
              <div className="post-header">
-            <img src={recent.avatar} key={recent.lname} alt ={recent.fname} className='user-avatar' />
-            <header>{recent.fname} {recent.lname}</header>
+               <img src={recent.avatar} key={recent.lname} alt ={recent.fname} className='user-avatar' />
+               <header>{recent.fname} {recent.lname}</header>
             </div>
             <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
            </div>
