@@ -15,7 +15,7 @@ class UserHomePage extends React.Component{
     }
 
     render(){
-        console.log("Users: ", this.props.user)
+        console.log("Users: ", this.props.user.photos)
         return (
             <div className="user-home-page">
 
@@ -26,13 +26,13 @@ class UserHomePage extends React.Component{
                 </Link>
             </nav>
               <h1 className='section-header'>My Posts</h1>
-                {/* <div className='recents-container'>
-                    {this.props.myPosts.map( recent => (
+                <div className='recents-container'>
+                    {this.props.user.photos.map( photo => (
                     <div className="post-container">
-                    <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
+                    <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     </div>
                     ))}
-                </div> */}
+                </div>
             </div>
         )
     }
