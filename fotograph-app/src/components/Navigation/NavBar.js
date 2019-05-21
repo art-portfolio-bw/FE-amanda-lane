@@ -7,7 +7,7 @@ import logo from '../../styles/LOGO.png';
 function NavBar(){
     return (
         <nav className="navigation-bar">
-            <Link className="logo" to="/"><img src={logo} /></Link>
+            <Link className="logo" to="/"><img src={logo} alt="fotograph logo" /></Link>
             <form className="search-bar">
             <button className="search-btn">+</button>
             <input 

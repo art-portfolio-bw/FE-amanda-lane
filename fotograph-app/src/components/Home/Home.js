@@ -30,7 +30,6 @@ class Home extends Component {
      <div className='home-container'>
        <h1 className='section-header'>Recent Photography Posts</h1>
        <div className='recents-container'>
-         {' '}
          {recentPosts.slice(0, 12).map((recent, index) => (
            <img src={recent.src} key={index} alt={recent.fname} className='recent-posts' />
          ))}
