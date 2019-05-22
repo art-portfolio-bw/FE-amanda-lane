@@ -38,8 +38,8 @@ class Post extends React.Component{
           <header>{this.props.popular.fname} {this.props.popular.lname}</header>
        </div>
             <p className="likes">
-                <i className={`far fa-heart ${this.state.liked ? `liked` : null}`} onClick={this.toggleLikes}>
-            </i> {this.props.popular.likes + this.state.likes} likes</p>
+                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} onClick={this.toggleLikes}>
+            </i> {this.props.popular.likes + this.state.likes}</p>
             <img 
             src={this.props.popular.src} 
             key={this.props.popular.artistId} 
