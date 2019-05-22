@@ -33,7 +33,7 @@ class UserHomePage extends React.Component{
                 <div className='recents-container'>
                     {this.props.user.photos.map( photo => (
                     <div className="post-container">
-                    <p className="likes"><i className="far fa-heart"></i> {photo.likes} likes</p>
+                    <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     <span>
                     <p className="photo-description">{photo.description}</p>
@@ -47,7 +47,8 @@ class UserHomePage extends React.Component{
 }
 
 const mapStateToProps = state => ({ 
-    user: state.user
+    user: state.user,
+    editingDescription: state.editingDescription
 })
 
 export default withRouter(connect(mapStateToProps, { fetchMyPosts } )(UserHomePage));

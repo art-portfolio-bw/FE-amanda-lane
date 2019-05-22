@@ -10,6 +10,7 @@ import {
     FETCH_USER_POSTS_SUCCESS,
     ADD_NEW_POST_START,
     ADD_NEW_POST_SUCCESSFUL,
+    EDIT_DESCRIPTION_SUCCESS,
     LOGOUT
   } from "../actions";
 
@@ -25,7 +26,9 @@ const initialState = {
     loginError: '',
     fetchingMyPosts: false,
     user: {},
-    addingPost: false
+    addingPost: false,
+    description: '',
+    editingDescription: false
 }
 
 //reducer
@@ -112,6 +115,13 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 addingPost: false,
               }
+
+              case EDIT_DESCRIPTION_SUCCESS:
+                return {
+                  ...state,
+                  description: action.payload,
+                  editingDescription: true
+                }
 
 
             default:

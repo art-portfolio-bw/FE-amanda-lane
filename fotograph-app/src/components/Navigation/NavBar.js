@@ -14,13 +14,14 @@ function NavBar(props){
     return (
         <nav className="navigation-bar">
             <Link className="logo" to="/"><img src={logo} alt="fotograph logo" /></Link>
-            <form className="search-bar">
+            {/* <form className="search-bar">
             <button className="search-btn">+</button>
             <input 
             placeholder="search"
             className="search-input"
             />
-            </form>
+            </form> */}
+            <NavLink className="nav-links" exact to="/">Home</NavLink>{' '}
             {props.loggedIn && <NavLink className="nav-links" to="/user"> My Photo Collection</NavLink>}
             <NavLink className="nav-links" to="/artists">Artists</NavLink>{' '}
             <NavLink className="nav-links" to="/about">About</NavLink>{' '}

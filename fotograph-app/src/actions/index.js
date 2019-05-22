@@ -90,3 +90,19 @@ export const login = creds => dispatch => {
     })
   }
 
+  export const EDIT_DESCRIPTION_SUCCESS = 'EDIT_DESCRIPTION_SUCCESS';
+
+  export const editDescription = (newDescription, id) => dispatch => {
+    axiosWithAuth()
+    .put(`https://artportfoliobw.herokuapp.com/${id}`, newDescription)
+    .then( res => {
+      console.log(res)
+      dispatch({ type: EDIT_DESCRIPTION_SUCCESS, payload: res.data })
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }
+
+
+
