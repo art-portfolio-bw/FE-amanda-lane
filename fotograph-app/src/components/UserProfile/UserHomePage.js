@@ -40,7 +40,7 @@ class UserHomePage extends React.Component{
                     <i class="fas fa-edit"></i>
                     </span>
                     </div>
-                    )).reverse()}
+                    ))}
                 </div>
             </div>
         )

@@ -27,6 +27,7 @@ class CreateNewPostForm extends React.Component{
             src: '', 
             description: ''
         })
+        this.props.history.push('/user')
     }    
 
     render(){
