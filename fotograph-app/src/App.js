@@ -1,22 +1,30 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import PrivateRoute from "./components/Authentication/PrivateRoute";
 
 import NavBar from './components/Navigation/NavBar';
 import SignUp from './components/Authentication/SignUp';
 import Login from './components/Authentication/Login';
 import Home from './components/Home/Home';
+import UserHomePage from './components/UserProfile/UserHomePage';
+import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
 
 import './styles/App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
+    <Router>
+      <div className="App">
+        <NavBar />
+        
+        <Route exact path='/' component={Home} />
+        <Route path='/sign-up' component={SignUp} />
+        <Route path='/login' component={Login} />
+        <Route path="/create-post" component={CreateNewPostForm} />
 
-      <Route exact path='/' component={Home} />
-      <Route path='/sign-up' component={SignUp} />
-      <Route path='/login' component={Login} />
-    </div>
+        <PrivateRoute path='/user' component={UserHomePage} />
+      </div>
+    </Router>
   );
 }
 

@@ -1,10 +1,49 @@
-.home-container {
+.user-home-page {
     margin-top: 10%;
     width: 98%;
+
+    .user-welcome-container {
+      width: 450px;
+      display: flex;
+    }
+
+    .avatar-img {
+      height: 35px;
+      border-radius: 50%;
+      margin: 0 0 2% 12%;
+      align-self: center;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      align-self: center;
+      margin-left: 2%;
+  }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 8%;
+        
+        a {
+            font-family: 'Kodchasan', sans-serif;
+            text-decoration: none;
+            color: #00CEE6;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            width: 200px;
+        }
+
+        .create-post-btn {
+            padding-left: 2%;
+        }
+    }
   
     .section-header {
       margin-left: 10%;
-      margin-top: 4%;
+      margin-top: 5%;
       font-size: 1.6rem;
       font-family: 'Kodchasan', sans-serif;
       color: #484a51;
@@ -27,8 +66,6 @@
 
       .post-header {
         display: flex;
-        position: relative;
-        top: 7%;
 
         header {
           align-self: center;
@@ -71,7 +108,8 @@
 
       .photo-description {
         font-size: .8rem;
-        margin-left: 2%;
+        margin-left: 5%;
+        width: 100%;
       }
     }
   }
