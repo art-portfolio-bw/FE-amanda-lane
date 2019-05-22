@@ -1,0 +1,4 @@
+[build]
+base = fotograph-app/"
+publish = "fotograph-app/build/"
+command = "yarn build"
