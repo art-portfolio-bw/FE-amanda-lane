@@ -24,7 +24,7 @@ function NavBar(props){
             <NavLink className="nav-links" exact to="/">Home</NavLink>{' '}
             {props.loggedIn && <NavLink className="nav-links" to="/user"> My Posts</NavLink>}
             <NavLink className="nav-links" to="/artists">Artists</NavLink>{' '}
-            <NavLink className="nav-links" to="/about">About</NavLink>{' '}
+            {/* <NavLink className="nav-links" to="/about">About</NavLink>{' '} */}
             <div className="log-link-container">
             {props.loggedIn ? (
                 <Link className="log-links" to="/" onClick={props.logout}>Log Out</Link>
