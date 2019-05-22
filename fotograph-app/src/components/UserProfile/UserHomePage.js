@@ -25,6 +25,7 @@ class UserHomePage extends React.Component{
 
     render(){
         console.log("Users: ", this.props.user)
+        const id = 1;
         return (
             <div className="user-home-page">
 
@@ -42,8 +43,10 @@ class UserHomePage extends React.Component{
                     {this.props.user.photos.map( photo => (
                     <div className="post-container">
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
+                    <Link to={`/post/${id}`}>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
-                    <span>
+                    </Link>
+                    {/* <span>
                     {!this.props.editingDescription && (
                     <>
                     <p className="photo-description">{photo.description}</p>
@@ -57,7 +60,7 @@ class UserHomePage extends React.Component{
                     <button onClick={this.cancelEdit}>x</button>
                     </>
                     )}
-                    </span>
+                    </span> */}
                     </div>
                     ))}
                 </div>

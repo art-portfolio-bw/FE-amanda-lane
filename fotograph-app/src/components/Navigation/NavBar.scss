@@ -1,7 +1,7 @@
 .navigation-bar {
     display: flex;
     width: 100vw;
-    height: 75px;
+    height: 100px;
     justify-content: space-between;
     align-items: center;
     background: white;
@@ -11,6 +11,10 @@
 
     .logo {
         margin-left: 3%;
+    }
+
+    .logo-img {
+        height: 40px;
     }
 
     .search-bar {
@@ -28,7 +32,7 @@
 
     .search-input {
         font-family: 'Kodchasan', sans-serif;
-        font-size: .7rem;
+        font-size: 1rem;
         border: none;
         padding: 1%;
         text-transform: uppercase;
@@ -46,7 +50,7 @@
 
     .nav-links {
         color: black;
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
     .nav-links.active {
@@ -55,16 +59,17 @@
     }
 
     .log-link-container {
-        width: 100px;
+        width: 120px;
         display: flex;
         justify-content: space-between;
         margin-right: 2%;
+        padding: 1%;
     }
 
     .log-links {
         color: gray;
-        font-size: .6rem;
-        margin-right: 2%;        
+        font-size: .8rem;
+        margin-right: 5%;        
     }
 
     a:hover, 

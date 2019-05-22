@@ -4,29 +4,33 @@
     align-items: center;
     height: 100vh;
     background: #007280;
-
+    
     .signup-page-container {
         background: white;
-        height: 470px;
+        height: 550px;
         display: flex;
         border-radius: 3px;
         margin-top: 50px;
     }
 
     .signup-form {
-        max-width: 300px;
-        width: 300px;
+        max-width: 375px;
+        width: 350px;
         height: auto;
     }
 
     h3 {
         text-transform: uppercase;
         padding: 15px;
+        font-size: .8rem;
+        margin-top: 10%;
+        text-align: center;
     }
 
     h2 {
         font-size: 1.2rem;
         padding: 15px;
+        margin-left: 20px;
     }
 
     .input-container {
@@ -69,7 +73,7 @@
         color: white;
         border-radius: 3px;
         font-family: 'Kodchasan', sans-serif;
-        font-size: .6rem;
+        font-size: .8rem;
     }
 
     .form-links {
@@ -80,10 +84,11 @@
 
     .form-footer {
         margin: 25px;
+        font-size: 0.8rem;
     }
 
     .login-hero {
-        height: 470px;
+        height: 550px;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
     }

@@ -39,9 +39,7 @@ class Post extends React.Component{
           />
           <header>{this.props.popular.fname} {this.props.popular.lname}</header>
        </div>
-            <p className="likes">
-                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} onClick={this.toggleLikes}>
-            </i> {this.props.popular.likes + this.state.likes}</p>
+            
             <Link to={`/post/${id}`}>
             <img 
             src={this.props.popular.src} 
@@ -50,7 +48,11 @@ class Post extends React.Component{
             className='recent-posts' 
             />
             </Link>
-       <p className="photo-description">{this.props.popular.description}</p>
+            <p className="likes">
+                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} 
+                onClick={this.toggleLikes}>
+            </i> {this.props.popular.likes + this.state.likes}
+            </p>
       </div>
 
     )
