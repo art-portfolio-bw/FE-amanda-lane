@@ -59,7 +59,7 @@ const reducer = ( state = initialState, action ) => {
             };
           case LOGIN_SUCCESS:
             // localStorage.getItem(JSON.stringify('token'))
-            console.log("what we got", action.payload)
+            // console.log("what we got", action.payload)
             return {
               ...state,
               loggingIn: false,

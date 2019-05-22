@@ -14,10 +14,8 @@ export const register = creds => dispatch => {
         "token",
         res.data.token
       );
-      localStorage.setItem(
-        "user", res.data
-      );
       dispatch({ type: REGISTER_SUCCESS, payload: res.data })
+      localStorage.setItem('user', res.data.artistId)
     })
     .catch(err => {
       console.log(err)
@@ -70,7 +68,7 @@ export const login = creds => dispatch => {
   export const ADD_NEW_POST_SUCCESSFUL = "ADD_NEW_POST_SUCCESSFUL";
   export const ADD_NEW_POST_FAILURE = "ADD_NEW_POST_FAILURE";
 
-  export const addNewPost = post => dispatch => {
+  export const addNewPost = (post) => dispatch => {
     dispatch({ type: ADD_NEW_POST_START });
     axiosWithAuth()
     .post(`https://artportfoliobw.herokuapp.com/`, post)
