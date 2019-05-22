@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import Post from './Post';
+import Post from './PopularPosts';
 
 import './Home.scss';
 
@@ -12,8 +12,8 @@ class Home extends Component {
    super(props);
    this.state = {
      recentPosts: [],
-     liked: false,
-     likes: null
+    //  liked: false,
+    //  likes: null
    };
  }
 
@@ -26,18 +26,18 @@ class Home extends Component {
      .catch(err => console.log(err));
  }
 
- toggleLikes = () => {
-  if(!this.state.liked){
-      this.setState(prevState => ({
-          likes: prevState.likes + 1, 
-          liked: !prevState.liked
-      }))} else if (this.state.liked) {
-          this.setState(prevState => ({ 
-              likes: prevState.likes - 1,
-              liked: !prevState.liked
-           }))
-      }
-}
+//  toggleLikes = () => {
+//   if(!this.state.liked){
+//       this.setState(prevState => ({
+//           likes: prevState.likes + 1, 
+//           liked: !prevState.liked
+//       }))} else if (this.state.liked) {
+//           this.setState(prevState => ({ 
+//               likes: prevState.likes - 1,
+//               liked: !prevState.liked
+//            }))
+//       }
+// }
 
  render() {
    return (
@@ -47,10 +47,9 @@ class Home extends Component {
       <div className='recents-container'>
          {this.state.recentPosts.slice(47, 53).map( popular => (
            <Post 
-            toggleLikes={this.toggleLikes}
-            likes={this.state.likes}
-            liked={this.state.liked}
-            recentPosts={this.state.recentPosts}
+            // toggleLikes={this.toggleLikes}
+            // likes={this.state.likes}
+            // liked={this.state.liked}
             popular={popular}
            />
          ))}
