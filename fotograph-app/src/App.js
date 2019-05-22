@@ -22,7 +22,15 @@ function App() {
         <NavBar />
         
         <Route exact path='/' component={Home} />
-        <Route exact path='/post/:photoId' component={SinglePost} />
+        <Route 
+        exact 
+        path='/post/:photoId' 
+        render={props=> (
+          <SinglePost 
+          {...props}
+          />
+        )}
+        />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/artists' component={ArtistsPage} />
