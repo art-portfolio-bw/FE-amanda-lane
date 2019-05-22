@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchMyPosts } from '../../actions';
+import { fetchMyPosts, showUpdate, cancelUpdate } from '../../actions';
 import { withRouter } from 'react-router-dom';
 
 import addbtn from '../../styles/addbtn.svg';
@@ -13,10 +13,18 @@ class UserHomePage extends React.Component{
     componentDidMount() {
         this.props.fetchMyPosts();
     }
+    
+    startEdit = () => {
+        this.props.showUpdate();
+    }
+
+    cancelEdit = (e) => {
+        e.preventDefault();
+        this.props.cancelUpdate();
+    }
 
     render(){
         console.log("Users: ", this.props.user)
-        if(this.props.user === {}) return <h1>loading data...</h1>;
         return (
             <div className="user-home-page">
 
@@ -36,8 +44,19 @@ class UserHomePage extends React.Component{
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     <span>
+                    {!this.props.editingDescription && (
+                    <>
                     <p className="photo-description">{photo.description}</p>
-                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-edit" onClick={this.startEdit}></i>
+                    </>
+                    )}
+                    {this.props.editingDescription && (
+                    <>
+                    <input value={photo.description} />
+                    <button>+</button>
+                    <button onClick={this.cancelEdit}>x</button>
+                    </>
+                    )}
                     </span>
                     </div>
                     ))}
@@ -52,4 +71,4 @@ const mapStateToProps = state => ({
     editingDescription: state.editingDescription
 })
 
-export default withRouter(connect(mapStateToProps, { fetchMyPosts } )(UserHomePage));
+export default withRouter(connect(mapStateToProps, { fetchMyPosts, showUpdate, cancelUpdate } )(UserHomePage));

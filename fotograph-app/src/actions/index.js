@@ -90,15 +90,28 @@ export const login = creds => dispatch => {
     })
   }
 
-  
+  export const EDIT_DESCRIPTION_START = 'EDIT_DESCRIPTION_START';
+  export const EDIT_DESCRIPTION_ABORT = 'EDIT_DESCRIPTION_ABORT';
   export const EDIT_DESCRIPTION_SUCCESS = 'EDIT_DESCRIPTION_SUCCESS';
 
-  export const editDescription = (newDescription, id) => dispatch => {
+  export const showUpdate = () => {
+    return {
+      type: EDIT_DESCRIPTION_START
+    }
+  }
+
+  export const cancelUpdate = () => {
+    return {
+      type: EDIT_DESCRIPTION_ABORT
+    }
+  }
+
+  export const editDescription = (updatedDescription, id) => dispatch => {
     axiosWithAuth()
-    .put(`https://artportfoliobw.herokuapp.com/${id}`, newDescription)
+    .put(`https://artportfoliobw.herokuapp.com/${id}`, updatedDescription)
     .then( res => {
-      console.log(res)
-      dispatch({ type: EDIT_DESCRIPTION_SUCCESS, payload: res.data })
+      console.log("put: ", res)
+      dispatch({ type: EDIT_DESCRIPTION_SUCCESS, payload: updatedDescription })
     })
     .catch( err => {
       console.log(err)

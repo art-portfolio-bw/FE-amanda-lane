@@ -10,8 +10,10 @@ import {
     FETCH_USER_POSTS_SUCCESS,
     ADD_NEW_POST_START,
     ADD_NEW_POST_SUCCESSFUL,
+    EDIT_DESCRIPTION_START,
     EDIT_DESCRIPTION_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    EDIT_DESCRIPTION_ABORT
   } from "../actions";
 
 //set initial State
@@ -116,11 +118,23 @@ const reducer = ( state = initialState, action ) => {
                 addingPost: false,
               }
 
+              case EDIT_DESCRIPTION_START:
+                return {
+                  ...state,
+                  editingDescription: true
+                }
+
+              case EDIT_DESCRIPTION_ABORT: 
+                return {
+                  ...state,
+                  editingDescription: false
+                }
+
               case EDIT_DESCRIPTION_SUCCESS:
                 return {
                   ...state,
                   description: action.payload,
-                  editingDescription: true
+                  editingDescription: false
                 }
 
 

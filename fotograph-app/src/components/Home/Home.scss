@@ -13,15 +13,17 @@
     .recents-container {
       padding-top: 1%;
       width: 90%;
-      margin: 0 auto;
+      margin: 0 auto 5% auto;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
 
       .post-container {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: flex-start;
-        width: 33%;
+        width: 30%;
       }
 
       .post-header {
@@ -47,10 +49,10 @@
         align-self: flex-end;
         background: white;
         padding: 2%;
-        margin-right: 10%;
+        margin-right: 8%;
         border-radius: 3px;
         position: relative;
-        top: 170px;
+        top: 190px;
         opacity: 0.8;
         z-index: 1;
         text-align: center;
@@ -61,11 +63,12 @@
       }
 
       .recent-posts {
-        width: 90%;
-        height: 175px;
+        width: 95%;
+        height: 200px;
         object-fit: cover;
         border-radius: 8px;
         padding: 6px 6px;
+        margin: 0 1%;
       }
 
       .photo-description {
