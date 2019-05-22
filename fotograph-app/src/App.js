@@ -8,6 +8,7 @@ import Login from './components/Authentication/Login';
 import Home from './components/Home/Home';
 import UserHomePage from './components/UserProfile/UserHomePage';
 import ArtistsPage from './components/Home/ArtistsPage';
+import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
 
 
 import './styles/App.scss';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/artists' component={ArtistsPage} />
+        <Route path='/create-post' component={CreateNewPostForm} />
 
         <PrivateRoute path='/user' component={UserHomePage} />
       </div>

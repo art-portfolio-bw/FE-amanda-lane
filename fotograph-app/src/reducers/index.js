@@ -7,7 +7,9 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
     FETCH_USER_POSTS_START,
-    FETCH_USER_POSTS_SUCCESS
+    FETCH_USER_POSTS_SUCCESS,
+    ADD_NEW_POST_START,
+    ADD_NEW_POST_SUCCESSFUL
   } from "../actions";
 
 //set initial State
@@ -21,7 +23,8 @@ const initialState = {
     loginWelcome: "",
     loginError: '',
     fetchingMyPosts: false,
-    user: {}
+    user: {},
+    addingPost: false
 }
 
 //reducer
@@ -55,7 +58,7 @@ const reducer = ( state = initialState, action ) => {
               loginError: ""
             };
           case LOGIN_SUCCESS:
-            // localStorage.setItem(JSON.stringify('user', action.payload))
+            // localStorage.getItem(JSON.stringify('token'))
             console.log("what we got", action.payload)
             return {
               ...state,
@@ -82,9 +85,20 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 fetchingMyPosts: false,
                 error: '',
-                myPosts: action.payload,
                 user: state.user,
                 loggedIn: true
+              }
+            case ADD_NEW_POST_START:
+              return {
+                ...state,
+                addingPost: true,
+                error: ''
+              }
+            case ADD_NEW_POST_SUCCESSFUL:
+              return {
+                ...state,
+                addingPost: false,
+
               }
             default:
                 return state;

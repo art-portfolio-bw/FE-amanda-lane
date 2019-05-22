@@ -35,7 +35,7 @@ export const login = creds => dispatch => {
     return axios
       .post("https://artportfoliobw.herokuapp.com/login", creds)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         localStorage.setItem(
           "token",
           res.data.token
@@ -58,8 +58,25 @@ export const login = creds => dispatch => {
     axiosWithAuth()
     .get(`https://artportfoliobw.herokuapp.com/`)
     .then( res => {
-      console.log("fetch", res)
-      dispatch({ type: FETCH_USER_POSTS_SUCCESS})
+      // console.log("fetch", res)
+      dispatch({ type: FETCH_USER_POSTS_SUCCESS })
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }
+
+  export const ADD_NEW_POST_START = "ADD_NEW_POST_START";
+  export const ADD_NEW_POST_SUCCESSFUL = "ADD_NEW_POST_SUCCESSFUL";
+  export const ADD_NEW_POST_FAILURE = "ADD_NEW_POST_FAILURE";
+
+  export const addNewPost = post => dispatch => {
+    dispatch({ type: ADD_NEW_POST_START });
+    axiosWithAuth()
+    .post(`https://artportfoliobw.herokuapp.com/`, post)
+    .then( res => {
+      console.log("add post", res)
+      dispatch({ type: ADD_NEW_POST_SUCCESSFUL, payload: res.data })
     })
     .catch( err => {
       console.log(err)
