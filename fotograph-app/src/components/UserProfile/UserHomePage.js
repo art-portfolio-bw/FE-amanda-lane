@@ -42,10 +42,28 @@ class UserHomePage extends React.Component{
                 <div className='recents-container'>
                     {this.props.user.photos.map( photo => (
                     <div className="post-container">
-                    <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
+
+                    
                     <Link to={`/post/${id}`}>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     </Link>
+                    <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
+                    </div>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = state => ({ 
+    user: state.user,
+    editingDescription: state.editingDescription
+})
+
+export default withRouter(connect(mapStateToProps, { fetchMyPosts, showUpdate, cancelUpdate } )(UserHomePage));
+
+
                     {/* <span>
                     {!this.props.editingDescription && (
                     <>
@@ -61,17 +79,3 @@ class UserHomePage extends React.Component{
                     </>
                     )}
                     </span> */}
-                    </div>
-                    ))}
-                </div>
-            </div>
-        )
-    }
-}
-
-const mapStateToProps = state => ({ 
-    user: state.user,
-    editingDescription: state.editingDescription
-})
-
-export default withRouter(connect(mapStateToProps, { fetchMyPosts, showUpdate, cancelUpdate } )(UserHomePage));
