@@ -1,77 +1,81 @@
 .artists-page-container {
-    margin-top: 10%;
-    width: 98%;
-  
-    .section-header {
-      margin-left: 10%;
-      margin-top: 4%;
-      font-size: 1.6rem;
-      font-family: 'Kodchasan', sans-serif;
-      color: #484a51;
-    }
-  
-    .recents-container {
-      padding-top: 1%;
-      width: 90%;
-      margin: 0 auto;
+  margin-top: 10%;
+  width: 98%;
+
+  .section-header {
+    margin-left: 10%;
+    margin-top: 4%;
+    font-size: 1.6rem;
+    font-family: 'Kodchasan', sans-serif;
+    color: #484a51;
+  }
+
+  .recents-container {
+    padding-top: 1%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .post-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 33%;
+      margin-top: 3%;
+    }
 
-      .post-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 30%;
-        margin: 1%;
+    .post-header {
+      display: flex;
+      position: relative;
+      top: 1%;
+
+      header {
+        align-self: center;
+        padding-left: 3%;
+        width: 170px;
       }
+    }
 
-      .post-header {
-        display: flex;
-        position: relative;
-        top: 7%;
+    .user-avatar {
+      border-radius: 50%;
+      height: 25px;
+      margin-left: 7%;
+    }
 
-        header {
-          align-self: center;
-          padding-left: 3%;
-          width: 170px;
-        }
+    .likes {
+      width: auto;
+      align-self: flex-end;
+      background: white;
+      padding: 2%;
+      margin-right: 10%;
+      border-radius: 3px;
+      position: relative;
+      top: 170px;
+      opacity: 0.8;
+      z-index: 1;
+      text-align: center;
+
+      .fa-heart {
+        padding-right: 2%;
       }
+    }
 
-      .user-avatar {
-        border-radius: 50%;
-        height: 50px;
-        margin-left: 7%;
-      }
+    .recent-posts {
+      width: 90%;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 8px;
+      padding: 6px 6px;
+    }
 
-      .likes {
-        width: auto;
-        align-self: flex-end;
-        background: lightgray;
-        padding: 2%;
-        margin-right: 10%;
-        border-radius: 3px;
-        position: relative;
-        top: 35px;
-        opacity: 0.8;
-        z-index: 1;
-        text-align: center;
-
-        .fa-heart {
-          padding-right: 2%;
-        }
-      }
-
-      .recent-posts {
-        width: 90%;
-        height: 175px;
-        object-fit: cover;
-        border-radius: 8px;
-        padding: 6px 6px;
-      }
-
-      .photo-description {
-        font-size: .8rem;
-        margin-left: 2%;
-      }
+    .photo-description {
+      font-size: .8rem;
+      margin-left: 2%;
     }
   }
+}
+
+.liked {
+  color: red;
+}
