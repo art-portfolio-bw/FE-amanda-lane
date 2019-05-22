@@ -9,7 +9,8 @@ import {
     FETCH_USER_POSTS_START,
     FETCH_USER_POSTS_SUCCESS,
     ADD_NEW_POST_START,
-    ADD_NEW_POST_SUCCESSFUL
+    ADD_NEW_POST_SUCCESSFUL,
+    LOGOUT
   } from "../actions";
 
 //set initial State
@@ -51,6 +52,10 @@ const reducer = ( state = initialState, action ) => {
             ...state,
             registationError: "There was an error processing your request."
           }
+
+
+
+
         case LOGIN_START:
             return {
               ...state,
@@ -58,8 +63,6 @@ const reducer = ( state = initialState, action ) => {
               loginError: ""
             };
           case LOGIN_SUCCESS:
-            // localStorage.getItem(JSON.stringify('token'))
-            // console.log("what we got", action.payload)
             return {
               ...state,
               loggingIn: false,
@@ -72,6 +75,13 @@ const reducer = ( state = initialState, action ) => {
                    ...state,
                    loginError: "Invalid Username/Password"
                }
+            case LOGOUT:
+               return {
+                 ...state,
+                 loggedIn: false
+               }
+
+
             case FETCH_USER_POSTS_START:
               return {
                 ...state,
@@ -88,6 +98,9 @@ const reducer = ( state = initialState, action ) => {
                 user: state.user,
                 loggedIn: true
               }
+
+
+
             case ADD_NEW_POST_START:
               return {
                 ...state,
@@ -98,8 +111,9 @@ const reducer = ( state = initialState, action ) => {
               return {
                 ...state,
                 addingPost: false,
-
               }
+
+
             default:
                 return state;
     }

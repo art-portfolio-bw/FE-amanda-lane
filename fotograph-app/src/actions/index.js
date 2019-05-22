@@ -33,7 +33,6 @@ export const login = creds => dispatch => {
     return axios
       .post("https://artportfoliobw.herokuapp.com/login", creds)
       .then(res => {
-        // console.log(res)
         localStorage.setItem(
           "token",
           res.data.token
@@ -46,6 +45,16 @@ export const login = creds => dispatch => {
         dispatch({ type: LOGIN_FAILURE })
       });
   };
+
+  export const LOGOUT = "LOGOUT";
+
+  export const logout = () => dispatch => {
+    localStorage.clear();
+    localStorage.setItem('item', 'something')
+    dispatch({ type: LOGOUT })
+  }
+
+
 
   export const FETCH_USER_POSTS_START = "FETCH_USER_POSTS_START";
   export const FETCH_USER_POSTS_SUCCESS = "FETCH_USER_POSTS_SUCCESS";
@@ -80,3 +89,4 @@ export const login = creds => dispatch => {
       console.log(err)
     })
   }
+
