@@ -5,11 +5,12 @@ import PrivateRoute from "./components/Authentication/PrivateRoute";
 import NavBar from './components/Navigation/NavBar';
 import SignUp from './components/Authentication/SignUp';
 import Login from './components/Authentication/Login';
-import Home from './components/Home/Home';
+import Home from './components/Public/PopularPage';
 import UserHomePage from './components/UserProfile/UserHomePage';
-import ArtistsPage from './components/Home/ArtistsPage';
+import ArtistsPage from './components/Public/RecentPage';
 import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
-import SinglePost from './components/Home/SinglePost';
+import SinglePost from './components/Public/SinglePost';
+import PopularPosts from './components/Public/PopularPosts';
 
 import './styles/App.scss';
 
@@ -21,7 +22,7 @@ function App() {
         <NavBar />
         
         <Route exact path='/' component={Home} />
-        <Route path='/post/:id' component={SinglePost} />
+        <Route exact path='/post/:photoId' component={SinglePost} />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/artists' component={ArtistsPage} />

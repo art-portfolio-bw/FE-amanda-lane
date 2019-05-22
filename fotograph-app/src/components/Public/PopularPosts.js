@@ -49,8 +49,10 @@ class Post extends React.Component{
             />
             </Link>
             <p className="likes">
-                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} onClick={this.toggleLikes}>
-            </i> {this.props.popular.likes + this.state.likes}</p>
+                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} 
+                onClick={this.toggleLikes}>
+            </i> {this.props.popular.likes + this.state.likes}
+            </p>
       </div>
 
     )

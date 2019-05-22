@@ -18,6 +18,7 @@ function NavBar(props){
             to="/">
                 <img src={logo} alt="fotograph logo" className="logo-img" />
             </Link>
+
             {/* <form className="search-bar">
             <button className="search-btn">+</button>
             <input 
@@ -25,10 +26,11 @@ function NavBar(props){
             className="search-input"
             />
             </form> */}
+
             <NavLink className="nav-links" exact to="/">Popular</NavLink>
             <NavLink className="nav-links" to="/artists">Recent</NavLink>
             {props.loggedIn && <NavLink className="nav-links" to="/user"> My Posts</NavLink>}
-            {/* <NavLink className="nav-links" to="/about">About</NavLink>{' '} */}
+
             <div className="log-link-container">
             {props.loggedIn ? (
                 <Link className="log-links" to="/" onClick={props.logout}>Log Out</Link>
