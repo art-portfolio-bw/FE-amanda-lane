@@ -43,7 +43,7 @@ class UserHomePage extends React.Component{
                     <div className="post-container">
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
-                    <span>
+                    {/* <span>
                     {!this.props.editingDescription && (
                     <>
                     <p className="photo-description">{photo.description}</p>
@@ -57,7 +57,7 @@ class UserHomePage extends React.Component{
                     <button onClick={this.cancelEdit}>x</button>
                     </>
                     )}
-                    </span>
+                    </span> */}
                     </div>
                     ))}
                 </div>
