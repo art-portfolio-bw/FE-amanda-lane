@@ -1,18 +1,45 @@
 .create-post-container {
-
+    background: #FAFAFA;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    padding-top: 100px;
 
-.create-post-form {
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid;
-}
+    .create-post-form {
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        height: 275px;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid;
+        background: white;
+
+        .cancel-btn {
+            text-decoration: none;
+            color: gray;
+            height: 10px;
+            font-size: 0.8rem;
+            align-self: flex-end;
+            margin: 2%;
+        }
+
+        input {
+            border-radius: 3px;
+            border: 1px solid silver;
+            width: 95%;
+        }
+
+        .new-post-btn {
+            margin: 5%;
+            border: 1px solid;
+            background: #B3F7FF;
+            padding: 3px 15px;
+            border-radius: 5px;
+        }
+    }
+
+   
 
 }

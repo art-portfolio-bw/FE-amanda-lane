@@ -62,6 +62,11 @@
         align-items: flex-start;
         width: 30%;
         margin: 1%;
+
+        span {
+          display: flex;
+          width: 90%;
+        }
       }
 
       .post-header {

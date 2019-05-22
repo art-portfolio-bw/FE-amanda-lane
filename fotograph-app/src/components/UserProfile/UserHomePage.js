@@ -37,6 +37,7 @@ class UserHomePage extends React.Component{
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     <span>
                     <p className="photo-description">{photo.description}</p>
+                    <i class="fas fa-edit"></i>
                     </span>
                     </div>
                     )).reverse()}

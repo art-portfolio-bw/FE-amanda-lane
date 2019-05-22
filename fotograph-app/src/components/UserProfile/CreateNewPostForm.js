@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addNewPost } from '../../actions';
 
@@ -32,6 +33,7 @@ class CreateNewPostForm extends React.Component{
         return (
             <div className="create-post-container">
             <form className="create-post-form" onSubmit={this.addNewPost}>
+                    <Link className="cancel-btn" to="/user">x cancel</Link>
                     <h3>Add New Post</h3>
                     <input 
                     placeholder="image URL"
@@ -45,7 +47,7 @@ class CreateNewPostForm extends React.Component{
                     value={this.state.description}
                     onChange={this.handleChange}
                     />
-                    <button className="new-post-btn" onClick={this.addNewPost}>+</button>
+                    <button className="new-post-btn" onClick={this.addNewPost}>submit</button>
             </form>
             </div>
             
