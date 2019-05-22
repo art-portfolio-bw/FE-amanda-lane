@@ -7,7 +7,10 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
     FETCH_USER_POSTS_START,
-    FETCH_USER_POSTS_SUCCESS
+    FETCH_USER_POSTS_SUCCESS,
+    ADD_NEW_POST_START,
+    ADD_NEW_POST_SUCCESSFUL,
+    LOGOUT
   } from "../actions";
 
 //set initial State
@@ -21,7 +24,8 @@ const initialState = {
     loginWelcome: "",
     loginError: '',
     fetchingMyPosts: false,
-    user: {}
+    user: {},
+    addingPost: false
 }
 
 //reducer
@@ -48,6 +52,10 @@ const reducer = ( state = initialState, action ) => {
             ...state,
             registationError: "There was an error processing your request."
           }
+
+
+
+
         case LOGIN_START:
             return {
               ...state,
@@ -67,6 +75,13 @@ const reducer = ( state = initialState, action ) => {
                    ...state,
                    loginError: "Invalid Username/Password"
                }
+            case LOGOUT:
+               return {
+                 ...state,
+                 loggedIn: false
+               }
+
+
             case FETCH_USER_POSTS_START:
               return {
                 ...state,
@@ -80,10 +95,25 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 fetchingMyPosts: false,
                 error: '',
-                myPosts: action.payload,
                 user: state.user,
                 loggedIn: true
               }
+
+
+
+            case ADD_NEW_POST_START:
+              return {
+                ...state,
+                addingPost: true,
+                error: ''
+              }
+            case ADD_NEW_POST_SUCCESSFUL:
+              return {
+                ...state,
+                addingPost: false,
+              }
+
+
             default:
                 return state;
     }

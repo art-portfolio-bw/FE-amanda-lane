@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
 import { Link, NavLink } from "react-router-dom";
+
+import { logout } from '../../actions';
 
 import './NavBar.scss';
 import logo from '../../styles/LOGO.png';
@@ -25,22 +26,18 @@ function NavBar(props){
             <NavLink className="nav-links" to="/about">About</NavLink>{' '}
             <div className="log-link-container">
             {props.loggedIn ? (
-                <Link className="log-links" to="/">Log Out</Link>
+                <Link className="log-links" to="/" onClick={props.logout}>Log Out</Link>
             ) : 
              (
-                <Link className="log-links" to="/login" onClick={logout}>Log In/Sign Up</Link>
+                <Link className="log-links" to="/login">Log In/Sign Up</Link>
             )}
             </div>
         </nav>
     )
 }
 
-function logout(){
-    return localStorage.clear();
-}
-
 const mapStateToProps = state => ({
     loggedIn: state.loggedIn
 })
 
-export default withRouter(connect(mapStateToProps, {} )(NavBar));
+export default withRouter(connect(mapStateToProps, { logout } )(NavBar));

@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import axios from 'axios';
 
-import './Home.scss';
+import './ArtistsPage.scss';
 
 class ArtistsPage extends Component {
  constructor(props) {
@@ -25,39 +25,33 @@ class ArtistsPage extends Component {
 
 
  render() {
-   const recentPosts = this.state.recentPosts;
-   console.log(recentPosts)
+   const artists = this.state.artists;
+   console.log(artists)
    return (
-     <div className='home-container'>
+     <div className='artists-page-container'>
+
+<h1 className='section-header'>New Artists</h1>
+       <div className='recents-container'>
+         {artists.map((recent, index) => (
+           <div className="post-container">
+             <div className="post-header">
+               <img src={recent.avatar} key={recent.email} alt={recent.fname} className='user-avatar' />
+               <header>{recent.fname} {recent.lname}</header>
+            </div>
+           </div>
+         )).reverse().slice(0, 12)}
+       </div>
 
       <h1 className='section-header'>Popular Artists</h1>
        <div className='recents-container'>
-         {recentPosts.slice(13, 19).map( recent => (
+         {artists.slice(0, 12).map( recent => (
            <div className="post-container">
              <div className="post-header">
                <img src={recent.avatar} key={recent.email} alt ={recent.fname} className='user-avatar' />
                <header>{recent.fname} {recent.lname}</header>
-            </div>
-            <p className="likes"><i className="far fa-heart"></i> {recent.likes} likes</p>
-            <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
-            <p className="photo-description">{recent.description}</p>
+            </div>  
            </div>
          ))}
-       </div>
-
-       <h1 className='section-header'>Recent Activity</h1>
-       <div className='recents-container'>
-         {recentPosts.map((recent, index) => (
-           <div className="post-container">
-             <div className="post-header">
-               <img src={recent.avatar} key={recent.email} alt ={recent.fname} className='user-avatar' />
-               <header>{recent.fname} {recent.lname}</header>
-            </div>
-            <p className="likes"><i className="far fa-heart"></i> {recent.likes} likes</p>
-           <img src={recent.src} key={recent.email} alt={recent.fname} className='recent-posts' />
-           <p className="photo-description">{recent.description}</p>
-           </div>
-         )).reverse().slice(0, 6)}
        </div>
      </div>
    );
