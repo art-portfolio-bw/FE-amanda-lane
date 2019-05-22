@@ -7,7 +7,8 @@ import SignUp from './components/Authentication/SignUp';
 import Login from './components/Authentication/Login';
 import Home from './components/Home/Home';
 import UserHomePage from './components/UserProfile/UserHomePage';
-import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
+import ArtistsPage from './components/Home/ArtistsPage';
+
 
 import './styles/App.scss';
 
@@ -20,7 +21,7 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
-        <Route path="/create-post" component={CreateNewPostForm} />
+        <Route path='/artists' component={ArtistsPage} />
 
         <PrivateRoute path='/user' component={UserHomePage} />
       </div>

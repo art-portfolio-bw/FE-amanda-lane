@@ -55,6 +55,8 @@ const reducer = ( state = initialState, action ) => {
               loginError: ""
             };
           case LOGIN_SUCCESS:
+            // localStorage.setItem(JSON.stringify('user', action.payload))
+            console.log("what we got", action.payload)
             return {
               ...state,
               loggingIn: false,

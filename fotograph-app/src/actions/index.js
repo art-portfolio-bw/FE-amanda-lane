@@ -14,6 +14,9 @@ export const register = creds => dispatch => {
         "token",
         res.data.token
       );
+      localStorage.setItem(
+        "user", res.data
+      );
       dispatch({ type: REGISTER_SUCCESS, payload: res.data })
     })
     .catch(err => {
@@ -38,6 +41,7 @@ export const login = creds => dispatch => {
           res.data.token
         );
         dispatch({ type: LOGIN_SUCCESS, payload: res.data })
+        localStorage.setItem('user', res.data.artistId)
       })
       .catch(err => {
         console.log(err)
