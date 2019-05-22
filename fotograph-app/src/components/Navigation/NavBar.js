@@ -36,10 +36,6 @@ function NavBar(props){
     )
 }
 
-// const logout = () => {
-//     return localStorage.clear();
-// }
-
 const mapStateToProps = state => ({
     loggedIn: state.loggedIn
 })
