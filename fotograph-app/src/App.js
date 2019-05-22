@@ -9,9 +9,10 @@ import Home from './components/Home/Home';
 import UserHomePage from './components/UserProfile/UserHomePage';
 import ArtistsPage from './components/Home/ArtistsPage';
 import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
-
+import SinglePost from './components/Home/SinglePost';
 
 import './styles/App.scss';
+
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <NavBar />
         
         <Route exact path='/' component={Home} />
+        <Route path='/post/:id' component={SinglePost} />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/artists' component={ArtistsPage} />

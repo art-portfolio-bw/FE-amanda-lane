@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Post extends React.Component{
     constructor(props){
@@ -25,6 +26,7 @@ class Post extends React.Component{
    
 
     render(){
+        const id = 1;
     return (
  
         <div className="post-container">
@@ -40,12 +42,14 @@ class Post extends React.Component{
             <p className="likes">
                 <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} onClick={this.toggleLikes}>
             </i> {this.props.popular.likes + this.state.likes}</p>
+            <Link to={`/post/${id}`}>
             <img 
             src={this.props.popular.src} 
             key={this.props.popular.artistId} 
             alt={this.props.popular.fname} 
             className='recent-posts' 
             />
+            </Link>
        <p className="photo-description">{this.props.popular.description}</p>
       </div>
 
