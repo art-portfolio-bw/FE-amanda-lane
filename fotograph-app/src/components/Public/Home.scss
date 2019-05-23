@@ -1,6 +1,10 @@
 .home-container {
     margin: 15vh auto;
-    width: 90%;
+    width: 100%;
+
+    @media (max-width: 600px) {
+      margin: 42vh auto;
+    }
   
     .section-header {
       margin-left: 4%;
@@ -8,24 +12,42 @@
       font-size: 1.6rem;
       font-family: 'Kodchasan', sans-serif;
       color: #484a51;
+
     }
   
     .recents-container {
       padding-top: 1%;
-      width: 98%;
+      width: 100%;
       margin: 0 auto 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
 
+      @media (max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+      }
+
       .post-container {
         width: 30%;
         padding: 1%;
+
+        @media (max-width: 600px){
+          width: 90%;
+          border: 1px solid silver;
+          box-shadow: 0 0 8px silver;
+          margin: 5% 0;
+        }
       }
 
       .post-header {
         display: flex;
         margin-bottom: 2%;
+
+        @media (max-width: 600px){
+          margin: 2% 0;
+        }
 
         header {
           align-self: center;
@@ -57,6 +79,10 @@
         justify-content: space-around;
         object-fit: contain;
 
+        @media (max-width: 600px) {
+          padding: 5% 0;
+        }
+
         .fa-heart {
          
         }
@@ -71,6 +97,11 @@
         height: 270px;
         object-fit: cover;
         border-radius: 8px;
+        
+        @media (max-width: 600px){
+          width: 98%;
+          margin: 1%;
+        }
       }
     }
   }
