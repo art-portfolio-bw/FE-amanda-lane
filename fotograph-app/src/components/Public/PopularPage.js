@@ -31,7 +31,7 @@ class Home extends Component {
 
       <h1 className='section-header'>Popular Posts</h1>
       <div className='recents-container'>
-         {this.state.popularPosts.filter( post => post.likes > 3020 ).map( popular => (
+         {this.state.popularPosts.filter( post => post.likes > 2500 ).map( popular => (
            <PopularPosts popular={popular} />
          ))}
          </div>

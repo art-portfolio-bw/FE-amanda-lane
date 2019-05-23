@@ -26,7 +26,7 @@ class Post extends React.Component{
    
 
     render(){
-        const id = 1;
+        console.log('popular', this.props.popular.photoId)
     return (
  
         <div className="post-container">
@@ -40,7 +40,7 @@ class Post extends React.Component{
           <header>{this.props.popular.fname} {this.props.popular.lname}</header>
        </div>
             
-            <Link to={`/post/${id}`}>
+            <Link to={`/post/${this.props.popular.photoId}`}>
             <img 
             src={this.props.popular.src} 
             key={this.props.popular.artistId} 

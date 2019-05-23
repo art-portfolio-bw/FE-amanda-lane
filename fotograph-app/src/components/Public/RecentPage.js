@@ -40,7 +40,7 @@ class Home extends Component {
       <div className='recents-container'>
          {this.state.popularPosts.map( recent => (
            <RecentPosts recent={recent} />
-         )).reverse().slice(12, 18)}
+         )).reverse().slice(12, 21)}
          </div>
        </div>
 

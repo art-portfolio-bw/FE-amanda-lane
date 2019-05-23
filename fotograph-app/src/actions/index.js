@@ -118,17 +118,8 @@ export const login = creds => dispatch => {
     })
   }
 
-  
-  export const getSinglePost = (id) => dispatch => {
-    axiosWithAuth()
-    .get(`https://artportfoliobw.herokuapp.com/${id}`)
-    .then(res => {
-      console.log(res)
-    })
-    .catch( err => {
-      console.log(err)
-    })
-  }
+
+
 
 
 
