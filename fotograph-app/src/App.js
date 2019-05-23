@@ -31,6 +31,15 @@ function App() {
           />
         )}
         />
+         <Route 
+        exact 
+        path='/my-post/:photoId' 
+        render={props=> (
+          <SinglePost 
+          {...props}
+          />
+        )}
+        />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/login' component={Login} />
         <Route path='/artists' component={ArtistsPage} />

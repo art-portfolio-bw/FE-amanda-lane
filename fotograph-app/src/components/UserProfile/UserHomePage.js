@@ -25,7 +25,6 @@ class UserHomePage extends React.Component{
 
     render(){
         console.log("Users: ", this.props.user)
-        console.log("user Props: ", this.props)
         return (
             <div className="user-home-page">
 
@@ -48,7 +47,7 @@ class UserHomePage extends React.Component{
                     <div className="post-container">
                     {console.log("photoid:", photo.photoId)}
                     
-                    <Link to={`/post/${photo.photoId}`}>
+                    <Link to={`/my-post/${photo.photoId}`}>
                     <img 
                     src={photo.src} 
                     key={photo.email} 
