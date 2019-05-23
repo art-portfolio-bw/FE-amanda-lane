@@ -1,6 +1,122 @@
 .single-post-page {
-    margin: 200px auto;
-    width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    background: #FFF;
+
+    .single-post-container {
+    margin: 15vh auto;
+    max-width: 38%;
+    width: 38%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    border: 1px solid silver;
+    box-shadow: 0 0 8px silver;
+    background: white;
+    }
+
+    .post-container {
+        padding: 3%;
+    }
+
+    header {
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        padding: 5% 0 2%;
+        
+    }
+
+    .avatar-img {
+        width: 5%;
+        border-radius: 50%;
+        margin-right: 2%;
+    }
+
+    .main-img {
+        width: 35vw;
+    }
+
+    .likes {
+        padding: 2%;
+        display: flex;
+        justify-content: space-between;
+        width: 11%;
+
+    &:hover {
+        cursor: pointer;
+    }
+    }
+
+    .description {
+        padding: 2% 0 7% 0;
+        font-size: 1.2rem;
+    }
+
+    .photo-description {
+        font-size: 1.2rem;
+    }
+
 }
+
+//edit post page styles
+
+.description-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0;
+}
+
+.edit-description {
+    width: 75%;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 1rem;
+    font-family: 'Kodchasan', sans-serif;
+    margin: 3% 0;
+}
+
+.save-edit-btn {
+    border-radius: 10px;
+    padding: 1% 2%;
+    margin: 2% 1%;
+    border: 1px solid #7197DA;
+    background: #7197DA;
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.9rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cancel-edit-btn {
+    border-radius: 50%;
+    margin: 2% 1%;
+    padding: 1.5% 2.5%;
+    background: rgb(38, 78, 148);
+    border: 1px solid rgb(38, 78, 148);
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.7rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.edit-label {
+    
+}
+
+
+
+
+
+

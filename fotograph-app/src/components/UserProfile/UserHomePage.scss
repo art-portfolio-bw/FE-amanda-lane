@@ -88,17 +88,17 @@
       }
 
       .likes {
-        width: auto;
-        padding: 2%;
-        background: none;
+        padding: 3%;
+        background: white;
         border-radius: 3px;
-        position: relative;
-        // opacity: 0.8;
-        z-index: 1;
-        font-size: 1rem;   
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 5%;
+        display: flex;
+        justify-content: space-between;
 
         .fa-heart {
-          padding-right: 2%;
+          padding-right: 15%;
         }
       }
 

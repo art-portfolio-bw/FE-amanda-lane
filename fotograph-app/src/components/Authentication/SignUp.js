@@ -49,29 +49,37 @@ class SignUp extends React.Component{
                     </header>
                         <div className="input-container">
                         <div className="name-inputs">
+                            <div>
+                         <label className="user-label">First Name</label>
                             <input
-                            placeholder="First Name"
+                            // placeholder="First Name"
                             name="fname"
                             value={this.state.registerUser.fname}
                             onChange={this.handleChange}
                             required
                             />
+                            </div>
+                            <div>
+                            <label className="user-label">Last Name</label>
                             <input 
-                            placeholder="Last Name"
+                            // placeholder="Last Name"
                             name="lname"
                             value={this.state.registerUser.lname}
                             onChange={this.handleChange}
                             required
                             />
+                            </div>
                         </div>
+                        <label className="user-label">Email</label>
                         <input 
-                        placeholder="Email"
+                        // placeholder="Email"
                         name="email"
                         value={this.state.registerUser.email}
                         onChange={this.handleChange}
                         />
+                        <label className="user-label">Password</label>
                         <input 
-                        placeholder="Password"
+                        // placeholder="Password"
                         name="password"
                         value={this.state.registerUser.password}
                         onChange={this.handleChange}

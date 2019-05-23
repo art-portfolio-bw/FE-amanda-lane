@@ -1,5 +1,5 @@
 .home-container {
-    margin: 15% auto;
+    margin: 15vh auto;
     width: 90%;
   
     .section-header {
@@ -42,18 +42,23 @@
       }
 
       .likes {
-        width: auto;
+        max-width: 80px;
+        padding: 2% 0;
         background: white;
         border-radius: 3px;
-        opacity: 0.8;
+        opacity: 0.6;
         z-index: 1;
         font-size: 1rem;
-        text-align: start;
-        margin-top: 3%;
-        margin-left: 1%;
+        text-align: center;
+        margin-left: 5%;
+        position: relative;
+        bottom: 15%;
+        display: flex;
+        justify-content: space-around;
+        object-fit: contain;
 
         .fa-heart {
-          padding-right: 2%;
+         
         }
 
        &:hover {

@@ -10,18 +10,18 @@ class Post extends React.Component{
         }
     }
 
-     toggleLikes = () => {
-  if(!this.state.liked){
-      this.setState(prevState => ({
-          likes: prevState.likes + 1, 
-          liked: !prevState.liked
-      }))} else if (this.state.liked) {
-          this.setState(prevState => ({ 
-              likes: prevState.likes - 1,
-              liked: !prevState.liked
-           }))
-      }
-}
+    toggleLikes = () => {
+        if(!this.state.liked){
+            this.setState(prevState => ({
+                likes: prevState.likes + 1, 
+                liked: !prevState.liked
+            }))} else if (this.state.liked) {
+                this.setState(prevState => ({ 
+                    likes: prevState.likes - 1,
+                    liked: !prevState.liked
+                }))
+            }
+        }
 
    
 
