@@ -37,7 +37,7 @@ class RecentPosts extends React.Component{
               <header>{this.props.recent.fname} {this.props.recent.lname}</header>
            </div>
     
-                <Link to={`/post/${id}`}>
+                <Link to={`/post/${this.props.recent.photoId}`}>
                 <img 
                 src={this.props.recent.src} 
                 key={this.props.recent.artistId} 
