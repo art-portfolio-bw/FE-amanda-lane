@@ -14,9 +14,7 @@ class EditPostPage extends React.Component{
       super(props);
       this.state = {
         item: {},
-        newDescripton: {
-          description: 'hello'
-        }
+        description: 'hello'
       }
     }
 
@@ -34,19 +32,18 @@ class EditPostPage extends React.Component{
       })
     }
 
-    updateDescription = (description, id) => {
-      console.log(this.state.newDescripton, "new description")
-      axiosWithAuth()
-      .put(`https://artportfoliobw.herokuapp.com/${id}`, description)
-      .then(res => {
-        console.log("response:", res)
-        this.setState({ 
-          description: res.data
-        })
-      })
-      .catch( err => {
-        console.log(err)
-      })
+    updateDescription = async (description, id) => {
+      console.log(this.state.description, "new description")
+      try { const options = {
+        headers: {
+          token: 
+          localStorage.getItem('token')
+        }
+      }
+      axios.put(`https://artportfoliobw.herokuapp.com/${id}`, {description: this.state.description}, options)
+    } catch(err) {
+        console.log(err, "error")
+      }
     }
 
         startEdit = () => {
@@ -68,8 +65,8 @@ class EditPostPage extends React.Component{
 
       handleSubmit = e => {
         e.preventDefault();
-        
         this.updateDescription(this.state.newDescription, this.state.item.photoId)
+        window.location.reload();
       }
 
     render(){
