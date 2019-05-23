@@ -1,8 +1,11 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { showUpdate, cancelUpdate } from '../../actions';
+
+import axios from 'axios';
+import { axiosWithAuth } from '../Authentication/axiosWithAuth';
+
 
 import '../Public/SinglePost.scss';
 
@@ -10,7 +13,8 @@ class EditPostPage extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        item: {}
+        item: {},
+        description: ''
       }
     }
 
@@ -28,14 +32,43 @@ class EditPostPage extends React.Component{
       })
     }
 
-    startEdit = () => {
-      this.props.showUpdate();
-  }
+    updateDescription = (description, id) => {
+      axiosWithAuth()
+      .put(`https://artportfoliobw.herokuapp.com/${id}`, description)
+      .then(res => {
+        console.log("response:", res)
+        this.setState({ 
+          description: res.data
+        })
+      })
+      .catch( err => {
+        console.log(err)
+      })
+    }
 
-  cancelEdit = (e) => {
-      e.preventDefault();
-      this.props.cancelUpdate();
-  }
+        startEdit = () => {
+          this.props.showUpdate();
+      }
+
+      cancelEdit = (e) => {
+          e.preventDefault();
+          this.props.cancelUpdate();
+      }
+
+      
+      changeHandler = (e) => {
+        this.setState({  
+          ...this.state.description,
+          [e.target.name]: e.target.value
+        })
+      }
+
+      handleSubmit = e => {
+        e.preventDefault();
+        this.updateDescription(this.state.description, this.state.item.photoId)
+      }
+
+
 
     render(){
       console.log("item", this.state.item)
@@ -56,16 +89,31 @@ class EditPostPage extends React.Component{
             <img src={item.src} alt={item.description} className="main-img" />
             <span>
             {!this.props.editingDescription && (
-            <>
+            <div className="description-container">
             <p className="photo-description">{item.description}</p>
             <i class="fas fa-edit" onClick={this.startEdit}></i>
-            </>
+            </div>
             )}
             {this.props.editingDescription && (
             <>
-            <input value={item.description} />
-            <button>+</button>
-            <button onClick={this.cancelEdit}>x</button>
+            <label className="edit-label">Edit your description:</label>
+            <input 
+            value={this.state.description} 
+            onChange={this.changeHandler}
+            name="description"
+            className="edit-description"
+            placeholder={item.description}
+            />
+            <button 
+            onClick={this.handleSubmit}
+            className="save-edit-btn"
+            >save
+            </button>
+            <button 
+            onClick={this.cancelEdit}
+            className="cancel-edit-btn"
+            >x
+            </button>
             </>
             )}
             </span>

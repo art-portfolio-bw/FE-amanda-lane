@@ -41,15 +41,17 @@ class Login extends React.Component{
                     <h2>Login</h2>
                 </header>
                     <div className="input-container">
+                    <label className="user-label">Username (email)</label>
                     <input 
-                    placeholder="Username/Email"
+                    // placeholder="Username/Email"
                     onChange={this.handleChange}
                     value={this.state.credentials.email}
                     name="email"
                     required
                     />
+                    <label className="user-label">Password</label>
                     <input 
-                    placeholder="Password"
+                    // placeholder="Password"
                     onChange={this.handleChange}
                     value={this.state.credentials.password}
                     name="password"

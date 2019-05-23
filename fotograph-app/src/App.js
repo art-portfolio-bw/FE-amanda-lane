@@ -10,7 +10,6 @@ import UserHomePage from './components/UserProfile/UserHomePage';
 import ArtistsPage from './components/Public/RecentPage';
 import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
 import SinglePost from './components/Public/SinglePost';
-import PopularPosts from './components/Public/PopularPosts';
 import EditPostPage from './components/UserProfile/EditPostPage';
 
 import './styles/App.scss';

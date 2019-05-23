@@ -46,13 +46,76 @@
         display: flex;
         justify-content: space-between;
         width: 11%;
+
+    &:hover {
+        cursor: pointer;
+    }
     }
 
     .description {
         padding: 2% 0 7% 0;
+        font-size: 1.2rem;
     }
 
+    .photo-description {
+        font-size: 1.2rem;
+    }
 
 }
+
+//edit post page styles
+
+.description-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0;
+}
+
+.edit-description {
+    width: 75%;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 1rem;
+    font-family: 'Kodchasan', sans-serif;
+    margin: 3% 0;
+}
+
+.save-edit-btn {
+    border-radius: 15px;
+    padding: 1% 2%;
+    margin: 1%;
+    border: 1px solid #7197DA;
+    background: #7197DA;
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.9rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cancel-edit-btn {
+    border-radius: 50%;
+    padding: 1% 2%;
+    background: rgb(38, 78, 148);
+    border: 1px solid rgb(38, 78, 148);
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 0.9rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.edit-label {
+    
+}
+
+
+
+
 
 

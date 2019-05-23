@@ -7,7 +7,9 @@ class SinglePost extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        item: {}
+        item: {},
+        likes: 0,
+        liked: false
       }
     }
 
@@ -25,6 +27,19 @@ class SinglePost extends React.Component{
       })
     }
 
+    toggleLikes = () => {
+      if(!this.state.liked){
+          this.setState(prevState => ({
+              likes: prevState.likes + 1, 
+              liked: !prevState.liked
+          }))} else if (this.state.liked) {
+              this.setState(prevState => ({ 
+                  likes: prevState.likes - 1,
+                  liked: !prevState.liked
+              }))
+          }
+      }
+
     render(){
       console.log("item", this.state.item)
       console.log("props: ", this.props)
@@ -39,7 +54,10 @@ class SinglePost extends React.Component{
                 <p>{item.fname} {item.lname}</p>
             </header>
           <div>
-             <p className="likes"><i className="fas fa-heart"></i> {item.likes}</p>
+          <p className="likes">
+                <i className={`fas fa-heart ${this.state.liked ? `liked` : null}`} 
+                onClick={this.toggleLikes}>
+            </i> {item.likes + this.state.likes}</p>
           </div>
             <img src={item.src} alt={item.description} className="main-img" />
             <p className="description">{item.description}</p>
