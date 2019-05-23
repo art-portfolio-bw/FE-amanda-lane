@@ -77,6 +77,12 @@
 
 }
 
+.login-hero {
+    @media (max-width: 600px){
+        display: none;
+    }
+}
+
 //edit post page styles
 
 .description-container {
@@ -86,13 +92,14 @@
 }
 
 .edit-description {
-    width: 65%;
+    width: 98%;
     padding: 1%;
     border-radius: 2px;
     border: 1px solid silver;
     font-size: 1rem;
     font-family: 'Kodchasan', sans-serif;
     margin: 3% 0;
+    display: block;
 }
 
 .save-edit-btn {

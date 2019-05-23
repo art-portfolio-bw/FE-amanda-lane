@@ -4,19 +4,26 @@
     display: flex;
     justify-content: center;
     padding-top: 100px;
+    width: 100vw;
 
     .create-post-form {
         margin-top: 5%;
         font-size: 2rem;
         display: flex;
         flex-direction: column;
-        width: 30vw;
+        width: 40vw;
         height: 375px;
         justify-content: space-between;
         align-items: center;
         border: 1px solid silver;
         box-shadow: 0 0 8px silver;
         background: white;
+
+        @media (max-width: 600px) {
+            margin: 25vh auto;
+            height: 50vh;
+            width: 80vw;
+        }
 
         .cancel-btn {
             text-decoration: none;

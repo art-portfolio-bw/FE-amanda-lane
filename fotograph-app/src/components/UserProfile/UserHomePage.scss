@@ -2,13 +2,28 @@
     margin: 10% auto;
     width: 95%;
 
+    @media screen {
+      margin: 40vh auto;
+    }
+
     .user-welcome-container {
       width: 450px;
       display: flex;
+
+      @media (max-width: 600px) {
+        margin: 10% 0;
+        flex-direction: column;
+      }
+
     }
 
     .profile-nav {
       margin-top: 10vh;
+
+      @media (max-width: 600px) {
+        display: flex;
+        flex-wrap: wrap
+      }
     }
 
     .avatar-img {
@@ -21,6 +36,11 @@
     h2 {
       font-size: 1.2rem;
       align-self: center;
+
+      @media (max-width: 600px) {
+        font-size: 0.9rem;
+        margin: 5% 0;
+      }
   }
 
     nav {
@@ -28,6 +48,7 @@
         justify-content: space-between;
         margin: 0 auto;
         width: 72%;
+
         
         a {
             font-family: 'Kodchasan', sans-serif;
@@ -38,6 +59,10 @@
             display: flex;
             align-items: center;
             width: 200px;
+            
+            @media (max-width: 600px) {
+              margin: 0 auto;
+            }
 
             span {
               margin-bottom: 4%;
@@ -72,6 +97,10 @@
         align-items: flex-start;
         width: 25%;
         margin: 1%;
+
+        @media (max-width: 600px) {
+          width: 95%;
+        }
 
         span {
           display: flex;

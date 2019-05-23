@@ -4,6 +4,10 @@
     align-items: center;
     height: 100vh;
     background: #007280;
+
+    @media (max-width: 600px)  {
+        height: auto;
+    }
     
     .signup-page-container {
         background: white;
@@ -17,6 +21,10 @@
         max-width: 375px;
         width: 350px;
         height: auto;
+
+        @media (max-width: 600px) {
+            margin-top: 20vh;
+        }
     }
 
     h3 {
