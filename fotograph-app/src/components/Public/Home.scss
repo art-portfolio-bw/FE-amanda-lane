@@ -42,24 +42,23 @@
       }
 
       .likes {
-        max-width: 12%;
-        width: auto;
-        padding: 2% 3%;
+        max-width: 80px;
+        padding: 2% 0;
         background: white;
         border-radius: 3px;
         opacity: 0.6;
         z-index: 1;
         font-size: 1rem;
         text-align: center;
-        margin-top: 3%;
         margin-left: 5%;
         position: relative;
-        bottom: 18%;
+        bottom: 15%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        object-fit: contain;
 
         .fa-heart {
-          padding-right: 2%;
+         
         }
 
        &:hover {

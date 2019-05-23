@@ -46,9 +46,9 @@ class UserHomePage extends React.Component{
                 <div className='recents-container'>
                     {this.props.user.photos.map( photo => (
                     <div className="post-container">
-
+                    {console.log("photoid:", photo.photoId)}
                     
-                    <Link to={`/post/${this.props.user.photoId}`}>
+                    <Link to={`/post/${photo.photoId}`}>
                     <img 
                     src={photo.src} 
                     key={photo.email} 
