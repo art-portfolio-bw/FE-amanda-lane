@@ -1,13 +1,23 @@
 .single-post-page {
-    margin: 120px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    background: #FFF;
+
+    .single-post-container {
+    margin: 15vh auto;
     max-width: 38%;
     width: 38%;
-    height: auto;
+    height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
-    border: 1px solid;
+    border: 1px solid silver;
+    box-shadow: 0 0 8px silver;
+    background: white;
+    }
 
     .post-container {
         padding: 3%;

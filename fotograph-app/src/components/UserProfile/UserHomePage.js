@@ -31,7 +31,11 @@ class UserHomePage extends React.Component{
 
             <nav>
                 <div className="user-welcome-container">
-                    <img src={this.props.user.avatar} className="avatar-img" alt={this.props.user.name} />
+                    <img 
+                    src={this.props.user.avatar} 
+                    className="avatar-img" 
+                    alt={this.props.user.name} 
+                    />
                     <h2>{this.props.user.msg}</h2>
                 </div>
                 <Link to="/create-post">Create new post 
@@ -45,7 +49,11 @@ class UserHomePage extends React.Component{
 
                     
                     <Link to={`/post/${this.props.user.photoId}`}>
-                    <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
+                    <img 
+                    src={photo.src} 
+                    key={photo.email} 
+                    alt={photo.fname} 
+                    className='recent-posts' />
                     </Link>
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
                     </div>
@@ -64,18 +72,20 @@ const mapStateToProps = state => ({
 export default withRouter(connect(mapStateToProps, { fetchMyPosts, showUpdate, cancelUpdate } )(UserHomePage));
 
 
-                    {/* <span>
-                    {!this.props.editingDescription && (
-                    <>
-                    <p className="photo-description">{photo.description}</p>
-                    <i class="fas fa-edit" onClick={this.startEdit}></i>
-                    </>
-                    )}
-                    {this.props.editingDescription && (
-                    <>
-                    <input value={photo.description} />
-                    <button>+</button>
-                    <button onClick={this.cancelEdit}>x</button>
-                    </>
-                    )}
-                    </span> */}
+
+
+{/* <span>
+{!this.props.editingDescription && (
+<>
+<p className="photo-description">{photo.description}</p>
+<i class="fas fa-edit" onClick={this.startEdit}></i>
+</>
+)}
+{this.props.editingDescription && (
+<>
+<input value={photo.description} />
+<button>+</button>
+<button onClick={this.cancelEdit}>x</button>
+</>
+)}
+</span> */}

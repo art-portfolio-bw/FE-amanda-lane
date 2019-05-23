@@ -31,7 +31,8 @@ class SinglePost extends React.Component{
 
       const item = this.state.item;
     return (
-        <div className="single-post-page">
+      <div className="single-post-page">
+        <div className="single-post-container">
           <div className="post-container">
             <header>
                 <img src={item.avatar} alt={`${item.fname} ${item.lname}`} className="avatar-img" />
@@ -44,6 +45,7 @@ class SinglePost extends React.Component{
             <p className="description">{item.description}</p>
           </div>
         </div>
+      </div>
     )
   } 
 }
