@@ -26,7 +26,7 @@ class Post extends React.Component{
    
 
     render(){
-        console.log('popular', this.props.popular.photoId)
+        // console.log('popular', this.props.popular.photoId)
     return (
  
         <div className="post-container">

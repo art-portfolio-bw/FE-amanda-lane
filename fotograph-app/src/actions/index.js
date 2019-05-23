@@ -119,6 +119,17 @@ export const login = creds => dispatch => {
   }
 
 
+  // export const fetchUser = (artistId) => dispatch => {
+  //   axios
+  //   .get(`https://artportfoliobw.herokuapp.com/${artistId}`)
+  //   .then(res => {
+  //     console.log("response:", res)
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
+  // }
+
 
 
 

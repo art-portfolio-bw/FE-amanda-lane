@@ -3,20 +3,36 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMyPosts } from '../../actions';
 import { withRouter } from 'react-router-dom';
+import axios from 'axios';
 
 import addbtn from '../../styles/addbtn.svg';
 
 import "./UserHomePage.scss";
 
 class UserHomePage extends React.Component{
+    state = {
+        user: []
+    }
 
     componentDidMount() {
         this.props.fetchMyPosts();
+        axios 
+        .get(`https://artportfoliobw.herokuapp.com/artists/${this.props.match.params.id}`)
+        .then(res => {
+            this.setState({ 
+                user: res.data
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
+
 
 
     render(){
         console.log("Users: ", this.props.user)
+        console.log('user: ', this.state.user)
         return (
             <div className="user-home-page">
 
@@ -60,6 +76,6 @@ const mapStateToProps = state => ({
     editingDescription: state.editingDescription
 })
 
-export default withRouter(connect(mapStateToProps, { fetchMyPosts} )(UserHomePage));
+export default withRouter(connect(mapStateToProps, { fetchMyPosts } )(UserHomePage));
 
 
