@@ -112,7 +112,7 @@ class EditPostPage extends React.Component{
             <button 
             onClick={this.cancelEdit}
             className="cancel-edit-btn"
-            >x
+            >cancel
             </button>
             </>
             )}

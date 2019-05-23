@@ -5,14 +5,17 @@
     .user-welcome-container {
       width: 450px;
       display: flex;
+    }
 
+    .profile-nav {
+      margin-top: 10vh;
     }
 
     .avatar-img {
       height: 35px;
       border-radius: 50%;
-      margin: 0 0 2% 12%;
       align-self: center;
+      margin-right: 2%;
     }
 
     h2 {
@@ -24,17 +27,22 @@
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 77%;
+        width: 72%;
         
         a {
             font-family: 'Kodchasan', sans-serif;
             text-decoration: none;
-            color: #00CEE6;
+            color: #00A0B2;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             width: 200px;
+
+            span {
+              margin-bottom: 4%;
+            }
+            
         }
 
         .create-post-btn {
