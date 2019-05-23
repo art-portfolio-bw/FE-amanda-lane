@@ -25,7 +25,7 @@ class UserHomePage extends React.Component{
 
     render(){
         console.log("Users: ", this.props.user)
-        const id = 1;
+        console.log("user Props: ", this.props)
         return (
             <div className="user-home-page">
 
@@ -44,7 +44,7 @@ class UserHomePage extends React.Component{
                     <div className="post-container">
 
                     
-                    <Link to={`/post/${id}`}>
+                    <Link to={`/post/${this.props.user.photoId}`}>
                     <img src={photo.src} key={photo.email} alt={photo.fname} className='recent-posts' />
                     </Link>
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>

@@ -7,7 +7,7 @@ class SinglePost extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        item: null
+        item: {}
       }
     }
 
@@ -29,7 +29,9 @@ class SinglePost extends React.Component{
       console.log("item", this.state.item)
       console.log("props: ", this.props)
     return (
-        <div className="single-post-page">I'm single post page</div>
+        <div className="single-post-page">I'm single post page
+          <p>{this.state.item.fname}</p>
+        </div>
     )
   } 
 }
