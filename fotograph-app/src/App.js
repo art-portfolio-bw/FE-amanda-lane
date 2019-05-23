@@ -11,6 +11,7 @@ import ArtistsPage from './components/Public/RecentPage';
 import CreateNewPostForm from './components/UserProfile/CreateNewPostForm';
 import SinglePost from './components/Public/SinglePost';
 import PopularPosts from './components/Public/PopularPosts';
+import EditPostPage from './components/UserProfile/EditPostPage';
 
 import './styles/App.scss';
 
@@ -35,7 +36,7 @@ function App() {
         exact 
         path='/my-post/:photoId' 
         render={props=> (
-          <SinglePost 
+          <EditPostPage 
           {...props}
           />
         )}
