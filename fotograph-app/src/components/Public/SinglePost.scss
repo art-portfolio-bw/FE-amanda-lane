@@ -17,6 +17,12 @@
     border: 1px solid silver;
     box-shadow: 0 0 8px silver;
     background: white;
+
+    @media (max-width: 600px){
+        margin: 40vh auto;
+        max-width: 100%;
+        width: 90%;
+    }
     }
 
     .post-container {
@@ -35,10 +41,18 @@
         width: 5%;
         border-radius: 50%;
         margin-right: 2%;
+
+        @media (max-width: 600px){
+            width: 35px;
+        }
     }
 
     .main-img {
         width: 35vw;
+
+        @media (max-width: 600px){
+            width: 85vw;
+        }
     }
 
     .likes {
@@ -63,6 +77,12 @@
 
 }
 
+.login-hero {
+    @media (max-width: 600px){
+        display: none;
+    }
+}
+
 //edit post page styles
 
 .description-container {
@@ -72,21 +92,23 @@
 }
 
 .edit-description {
-    width: 75%;
+    width: 98%;
     padding: 1%;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 1px solid silver;
     font-size: 1rem;
     font-family: 'Kodchasan', sans-serif;
     margin: 3% 0;
+    display: block;
 }
 
 .save-edit-btn {
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 1% 2%;
     margin: 2% 1%;
-    border: 1px solid #7197DA;
-    background: #7197DA;
+    border: none;
+    box-shadow: 2px 2px 8px gray;
+    background: rgb(18, 92, 221);
     color: white;
     font-family: 'Kodchasan', sans-serif;
     font-size: 0.9rem;
@@ -97,14 +119,15 @@
 }
 
 .cancel-edit-btn {
-    border-radius: 50%;
-    margin: 2% 1%;
-    padding: 1.5% 2.5%;
-    background: rgb(38, 78, 148);
-    border: 1px solid rgb(38, 78, 148);
+    border-radius: 2px;
+    padding: 1% 2%;
+    margin: 2% 0;
+    border: none;
+    box-shadow: 2px 2px 8px gray;
+    background: #7197DA;
     color: white;
     font-family: 'Kodchasan', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 
     &:hover {
         cursor: pointer;
@@ -112,7 +135,7 @@
 }
 
 .edit-label {
-    
+    display: block;
 }
 
 

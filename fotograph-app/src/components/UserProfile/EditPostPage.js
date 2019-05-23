@@ -14,7 +14,9 @@ class EditPostPage extends React.Component{
       super(props);
       this.state = {
         item: {},
-        description: ''
+        newDescripton: {
+          description: 'hello'
+        }
       }
     }
 
@@ -33,6 +35,7 @@ class EditPostPage extends React.Component{
     }
 
     updateDescription = (description, id) => {
+      console.log(this.state.newDescripton, "new description")
       axiosWithAuth()
       .put(`https://artportfoliobw.herokuapp.com/${id}`, description)
       .then(res => {
@@ -65,14 +68,11 @@ class EditPostPage extends React.Component{
 
       handleSubmit = e => {
         e.preventDefault();
-        this.updateDescription(this.state.description, this.state.item.photoId)
+        
+        this.updateDescription(this.state.newDescription, this.state.item.photoId)
       }
 
-
-
     render(){
-      console.log("item", this.state.item)
-      console.log("props: ", this.props)
 
       const item = this.state.item;
     return (
@@ -112,7 +112,7 @@ class EditPostPage extends React.Component{
             <button 
             onClick={this.cancelEdit}
             className="cancel-edit-btn"
-            >x
+            >cancel
             </button>
             </>
             )}

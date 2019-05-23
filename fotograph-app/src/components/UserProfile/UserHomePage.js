@@ -20,7 +20,7 @@ class UserHomePage extends React.Component{
         return (
             <div className="user-home-page">
 
-            <nav>
+            <nav className="profile-nav">
                 <div className="user-welcome-container">
                     <img 
                     src={this.props.user.avatar} 
@@ -29,7 +29,7 @@ class UserHomePage extends React.Component{
                     />
                     <h2>{this.props.user.msg}</h2>
                 </div>
-                <Link to="/create-post">Create new post 
+                <Link to="/create-post"><span>Create new post </span>
                     <img className="create-post-btn" src={addbtn} alt="add new post" />
                 </Link>
             </nav>
@@ -45,7 +45,7 @@ class UserHomePage extends React.Component{
                     alt={photo.fname} 
                     className='recent-posts' />
                     </Link>
-                    
+
                     <p className="likes"><i className="fas fa-heart"></i> {photo.likes}</p>
                     </div>
                     ))}

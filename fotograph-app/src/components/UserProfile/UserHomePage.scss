@@ -2,39 +2,72 @@
     margin: 10% auto;
     width: 95%;
 
+    @media (max-width: 600px) {
+      margin: 40vh auto;
+    }
+
     .user-welcome-container {
       width: 450px;
       display: flex;
 
+      @media (max-width: 600px) {
+        margin: 10% 0;
+        flex-direction: column;
+      }
+
+    }
+
+    .profile-nav {
+      margin-top: 10vh;
+
+      @media (max-width: 600px) {
+        display: flex;
+        flex-wrap: wrap
+      }
     }
 
     .avatar-img {
       height: 35px;
       border-radius: 50%;
-      margin: 0 0 2% 12%;
       align-self: center;
+      margin-right: 2%;
     }
 
     h2 {
       font-size: 1.2rem;
       align-self: center;
+
+      @media (max-width: 600px) {
+        font-size: 0.9rem;
+        margin: 5% 0;
+      }
   }
 
     nav {
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 77%;
+        width: 72%;
+
         
         a {
             font-family: 'Kodchasan', sans-serif;
             text-decoration: none;
-            color: #00CEE6;
+            color: #00A0B2;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             width: 200px;
+            
+            @media (max-width: 600px) {
+              margin: 0 auto;
+            }
+
+            span {
+              margin-bottom: 4%;
+            }
+            
         }
 
         .create-post-btn {
@@ -64,6 +97,10 @@
         align-items: flex-start;
         width: 25%;
         margin: 1%;
+
+        @media (max-width: 600px) {
+          width: 95%;
+        }
 
         span {
           display: flex;

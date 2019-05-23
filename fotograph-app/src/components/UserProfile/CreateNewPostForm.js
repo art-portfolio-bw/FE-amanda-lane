@@ -48,7 +48,9 @@ class CreateNewPostForm extends React.Component{
                     value={this.state.description}
                     onChange={this.handleChange}
                     />
-                    <button className="new-post-btn" onClick={this.addNewPost}>submit</button>
+                    <button 
+                    className="new-post-btn" 
+                    onClick={this.addNewPost}>submit</button>
             </form>
             </div>
             

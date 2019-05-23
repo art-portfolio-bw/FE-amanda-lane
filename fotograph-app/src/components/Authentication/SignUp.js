@@ -50,7 +50,7 @@ class SignUp extends React.Component{
                         <div className="input-container">
                         <div className="name-inputs">
                             <div>
-                         <label className="user-label">First Name</label>
+                         <label className="user-label-name">First Name</label>
                             <input
                             // placeholder="First Name"
                             name="fname"
@@ -60,7 +60,7 @@ class SignUp extends React.Component{
                             />
                             </div>
                             <div>
-                            <label className="user-label">Last Name</label>
+                            <label className="user-label-name">Last Name</label>
                             <input 
                             // placeholder="Last Name"
                             name="lname"

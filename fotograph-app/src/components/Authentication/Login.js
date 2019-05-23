@@ -41,7 +41,7 @@ class Login extends React.Component{
                     <h2>Login</h2>
                 </header>
                     <div className="input-container">
-                    <label className="user-label">Username (email)</label>
+                    <label className="user-label">Username (Email)</label>
                     <input 
                     // placeholder="Username/Email"
                     onChange={this.handleChange}
