@@ -91,7 +91,11 @@
     .log-links {
         color: gray;
         font-size: .8rem;
-        margin-right: 5%;    
+        margin-right: 5%;   
+        
+        @media (max-width: 600px){
+          margin-right: 0;
+        }
     }
 
     a:hover, 

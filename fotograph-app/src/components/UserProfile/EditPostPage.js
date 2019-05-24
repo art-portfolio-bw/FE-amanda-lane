@@ -99,7 +99,6 @@ class EditPostPage extends React.Component{
             onChange={this.changeHandler}
             name="description"
             className="edit-description"
-            placeholder={item.description}
             />
             <button 
             onClick={this.handleSubmit}
