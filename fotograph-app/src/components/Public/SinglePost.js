@@ -46,6 +46,7 @@ class SinglePost extends React.Component{
 
       const item = this.state.item;
     return (
+
       <div className="single-post-page">
         <div className="single-post-container">
           <div className="post-container">

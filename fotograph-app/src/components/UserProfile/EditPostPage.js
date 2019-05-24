@@ -14,7 +14,7 @@ class EditPostPage extends React.Component{
       super(props);
       this.state = {
         item: {},
-        description: 'hello'
+        description: ''
       }
     }
 
@@ -32,7 +32,7 @@ class EditPostPage extends React.Component{
       })
     }
 
-    updateDescription = async (description, id) => {
+    updateDescription = async (id) => {
       console.log(this.state.description, "new description")
       try { const options = {
         headers: {
@@ -65,13 +65,13 @@ class EditPostPage extends React.Component{
 
       handleSubmit = e => {
         e.preventDefault();
-        this.updateDescription(this.state.newDescription, this.state.item.photoId)
+        this.updateDescription(this.state.item.photoId)
         window.location.reload();
       }
 
     render(){
-
       const item = this.state.item;
+      console.log(item, this.state.description)
     return (
       <div className="single-post-page">
         <div className="single-post-container">
